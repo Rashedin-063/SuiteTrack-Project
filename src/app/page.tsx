@@ -1,8 +1,8 @@
 
 import Hero from "@/components/Hero";
-import Footer from "@/components/ui/Footer";
-import Navbar from "@/components/ui/Navbar";
-import Services from "@/components/ui/Services";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
