@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Footer.jsx", "src/components/Hero.jsx", "src/components/Navbar.jsx", "src/components/Services.jsx", "src/app/page.jsx", "src/app/layout.jsx", "next.config.js", "tailwind.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Footer.jsx", "src/components/Hero.jsx", "src/components/Navbar.jsx", "src/components/Services.jsx", "src/app/page.jsx", "src/app/layout.jsx", "next.config.mjs", "tailwind.config.js"],
   "exclude": ["node_modules"]
 }
