@@ -1,6 +1,8 @@
 const Hero = () => {
   return (
-    <div>Hero</div>
+    <div>
+      <p className="text-center text-black font-bold">Hero</p>
+    </div>
   )
 }
 export default Hero
