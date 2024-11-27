@@ -40,7 +40,7 @@ const Footer = () => {
                 Suite<span className='text-lightSecondary'>Track</span>
               </h3>
               <p className='text-sm'>
-                Your Suite Solution to Hospitality Excellence
+                Experience hospitality like never before. Discover comfort, luxury, and impeccable service at every step of your journey.
               </p>
             </div>
             <div className='space-y-2'>
