@@ -1,5 +1,4 @@
 import Link from "next/link"
-
 const Navbar = () => {
   return (
     <header className="p-4  text-lightPrimary">
@@ -9,19 +8,19 @@ const Navbar = () => {
         </Link>
         <ul className="items-stretch hidden space-x-3 lg:flex">
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600">Link</a>
+            <Link rel="noopener noreferrer" href="#" clLinkssName="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600">Link</Link>
           </li>
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Home</a>
+            <Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Home</Link>
           </li>
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">About</a>
+            <Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">About</Link>
           </li>
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Blog</a>
+            <Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Blog</Link>
           </li>
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Contact</a>
+            <Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Contact</Link>
           </li>
         </ul>
         <div className="items-center flex-shrink-0 hidden lg:flex">
