@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='flex flex-col lg:flex lg:flex-row lg:space-x-8 space-y-6 lg:space-y-0'>
           <div className='space-y-6'>
             <h3 className="font-semibold text-3xl text-white">SuitTrack</h3>
-            <p className="text-sm">Saepe quo suscipit vitae quia. Repudiandae nobis quis. Laboriosam unde quae qui quasi mollitia tenetur. Dicta explicabo est consectetur maxime quos fugit velit assumenda est. </p>
+            <p className="text-sm">Empowering women through fashion. Discover styles that inspire confidence, celebrate individuality, and reflect your true self</p>
           </div>
           <div className='space-y-2'>
             <h3 className='text-2xl font-semibold'>Sign Up For Our Newsletter!</h3>
