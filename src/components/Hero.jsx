@@ -6,7 +6,7 @@ import { MdOutlineDateRange } from "react-icons/md"
 const Hero = () => {
   return (
     <div className="relative">
-      <div className="bg-no-repeat bg-cover bg-center bg-[#30333866] bg-blend-multiply rounded-3xl p-32" style={{ backgroundImage: "url(https://i.postimg.cc/bN3Vp9XS/img2.jpg)" }}>
+      <div className="bg-no-repeat bg-cover bg-center bg-[#30333866] bg-blend-multiply rounded-3xl p-32 text-darkPrimary" style={{ backgroundImage: "url(https://i.postimg.cc/bN3Vp9XS/img2.jpg)" }}>
         <h6 className="text-center text-7xl font-thin max-w-4xl mx-auto">Where every journey become an adventure</h6>
         <form className="flex justify-center relative py-10" action="">
           <p className="absolute top-14 left-[140px] text-black"><FaMapMarkerAlt /></p>
