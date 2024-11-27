@@ -5,11 +5,13 @@ import { FaLinkedin } from "react-icons/fa"
 const Footer = () => {
   return (
     <div className='bg-[rgb(29,29,29)]'>
-      <footer className=' lg:py-12 lg:px-24 p-4 pt-20 text-darkPrimary'>
-   <div>
+      <footer className=' max-w-7xl mx-auto px-5 lg:p lg:py-12 pt-20 text-darkPrimary'>
+        <div>
           <div className='flex flex-col lg:flex lg:flex-row lg:space-x-8 space-y-6 lg:space-y-0'>
             <div className='space-y-6'>
-              <h3 className='font-semibold text-3xl text-white'>SuitTrack</h3>
+              <h3 className='font-semibold text-3xl text-white'>
+                Suit<span className="text-lightSecondary">Track</span>
+              </h3>
               <p className='text-sm'>
                 Saepe quo suscipit vitae quia. Repudiandae nobis quis.
                 Laboriosam unde quae qui quasi mollitia tenetur. Dicta explicabo
