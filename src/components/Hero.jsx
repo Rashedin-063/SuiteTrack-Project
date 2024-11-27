@@ -25,7 +25,7 @@ const Hero = () => {
         </div>
         <div>
           <h6 className="text-3xl">20,000+</h6>
-          <p>Happy Customer</p>
+          <p>Happy Customers</p>
         </div>
         <div>
           <h6 className="text-3xl">100+</h6>
