@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
 import FeaturedSection from "@/components/FeaturedSection";
+import { Review } from "@/components/Review";
+import Faq from "@/components/faq/Faq";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
         <Hero />
         <FeaturedSection/>
         <Services />
+        <Review />
+        <Faq />
       </div>
       <div>
         <Footer />
