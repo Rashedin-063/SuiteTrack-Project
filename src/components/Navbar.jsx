@@ -1,7 +1,7 @@
 import Link from "next/link"
 const Navbar = () => {
   return (
-    <header className="p-4  text-lightPrimary">
+    <header className="py-4  text-lightPrimary">
       <div className="container flex justify-between items-center h-16 mx-auto">
         <Link href="/"  rel="noopener noreferrer" aria-label="Back to homepage" className="flex items-center p-2">
           <h2 className="text-2xl lg:text-3xl font-bold">Suite<span className="text-lightSecondary">Track</span></h2>
