@@ -1,9 +1,5 @@
-module.exports = {
-  content: [
-    './src/pages/**/*.{js,jsx,mdx}',
-    './src/components/**/*.{js,jsx,mdx}',
-    './src/app/**/*.{js,jsx,mdx}',
-  ],
+export default {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
