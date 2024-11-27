@@ -5,11 +5,15 @@ import Services from "@/components/Services";
 
 export default function Home() {
   return (
-    <div className="bg-indigo-900 text-white space-y-16 lg:space-y-28">
-      <Navbar/>
-      <Hero />
-      <Services />
-      <Footer />
-   </div>
- )
+    <>
+      <div className='bg-lightBackground text-white space-y-16 lg:space-y-28 max-w-7xl mx-auto px-5 lg:px-10'>
+        <Navbar />
+        <Hero />
+        <Services />
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </>
+  );
 }
