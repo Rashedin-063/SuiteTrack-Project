@@ -1,3 +1,4 @@
+'use client'
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material"
 const Navbar = () => {
   return (
