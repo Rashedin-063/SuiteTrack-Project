@@ -55,7 +55,7 @@ const Faq = () => {
                 className="border border-gray-200 rounded-lg overflow-hidden shadow-md"
               >
                 <button
-                  className="w-full px-4 py-6 dark:text-gray-800 text-left font-semibold focus:outline-none   transition-colors duration-200 ease-in-out hover:bg-gray-50"
+                  className="w-full px-4 py-6 text-black text-left font-semibold focus:outline-none   transition-colors duration-200 ease-in-out hover:bg-gray-50"
                   onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                 >
                   {item.question}
@@ -68,7 +68,7 @@ const Faq = () => {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="px-4 py-6 pt-0 dark:text-gray-600">
+                      <p className="px-4 py-6 pt-0 text-black">
                         {item.answer}
                       </p>
                     </motion.div>
