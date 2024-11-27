@@ -4,7 +4,7 @@ import { features } from '@/data'
 
 const FeaturedSection = () => {
   return (
-    <section className=' py-12 px-6'>
+    <section className=' py-12'>
       <div className='container mx-auto text-center'>
         <h2 className='text-3xl lg:text-4xl xl:text-5xl font-bold text-lightPrimary mb-8 lg:mb-12'>
           Features & Services

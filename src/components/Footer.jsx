@@ -1,28 +1,53 @@
-import { BsTwitterX } from "react-icons/bs"
-import { CiFacebook } from "react-icons/ci"
-import { FaLinkedin } from "react-icons/fa"
+import Link from 'next/link';
+import { BsTwitterX } from 'react-icons/bs';
+import { CiFacebook } from 'react-icons/ci';
+import { FaLinkedin } from 'react-icons/fa';
+
+const footerItems = [
+  {
+    title: 'Contact Us',
+    link: 'mailto:support@SuitTrack.com',
+    text: 'support@SuitTrack.com',
+  },
+  {
+    title: 'About Us',
+    link: '/about',
+    text: 'Learn More About Us',
+  },
+  {
+    title: 'Privacy Policy',
+    link: '/privacy-policy',
+    text: 'Terms & Conditions',
+  },
+  {
+    title: 'Social Links',
+    icons: [
+      { Icon: CiFacebook, link: 'https://facebook.com' },
+      { Icon: BsTwitterX, link: 'https://twitter.com' },
+      { Icon: FaLinkedin, link: 'https://linkedin.com' },
+    ],
+  },
+];
 
 const Footer = () => {
   return (
     <div className='bg-[rgb(29,29,29)]'>
-      <footer className=' max-w-7xl mx-auto px-5 lg:p lg:py-12 pt-20 text-darkPrimary'>
+      <footer className=' max-w-7xl mx-auto px-5 lg:px-10 lg:py-12 pt-20 text-darkPrimary'>
         <div>
-          <div className='flex flex-col lg:flex lg:flex-row lg:space-x-8 space-y-6 lg:space-y-0'>
+          <div className='flex flex-col lg:flex lg:flex-row lg:justify-between space-y-6 lg:space-y-0'>
             <div className='space-y-6'>
               <h3 className='font-semibold text-3xl text-white'>
-                Suit<span className="text-lightSecondary">Track</span>
+                Suite<span className='text-lightSecondary'>Track</span>
               </h3>
               <p className='text-sm'>
-                Saepe quo suscipit vitae quia. Repudiandae nobis quis.
-                Laboriosam unde quae qui quasi mollitia tenetur. Dicta explicabo
-                est consectetur maxime quos fugit velit assumenda est.{' '}
+                Your Suite Solution to Hospitality Excellence
               </p>
             </div>
             <div className='space-y-2'>
               <h3 className='text-2xl font-semibold'>
                 Sign Up For Our Newsletter!
               </h3>
-              <p className='text-sm'>
+              <p className='text-sm max-w-xs'>
                 Get notified about updates and be the first to get early access
                 to new Podcast episodes.
               </p>
@@ -39,51 +64,43 @@ const Footer = () => {
             </div>
           </div>
           <div className='w-full mt-12 bg-[#1D1D1D] py-8'>
-            <div className='max-w-7xl mx-auto px-4 lg:px-8'>
-              <table className='w-full'>
-                <thead className='flex flex-col lg:flex-row w-full justify-between mb-4'>
-                  <tr className='flex flex-col lg:flex-row lg:space-x-8 w-full'>
-                    <th className='text-left lg:text-center flex-1'>
-                      Contact Us
-                    </th>
-                    <th className='text-left lg:text-center flex-1'>
-                      About Us
-                    </th>
-                    <th className='text-left lg:text-center flex-1'>
-                      Privacy Policy
-                    </th>
-                    <th className='text-left lg:text-center flex-1'>
-                      Social Links
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className='flex flex-col lg:flex-row w-full justify-between'>
-                  <tr className='flex flex-col lg:flex-row lg:space-x-8 w-full'>
-                    <td className='text-left lg:text-center flex-1'>
-                      support@SuitTrack.com
-                    </td>
-                    <td className='text-left lg:text-center flex-1'>
-                      Contact Us
-                    </td>
-                    <td className='text-left lg:text-center flex-1'>
-                      Terms & Conditions
-                    </td>
-                    <td className='flex items-center justify-start lg:justify-center space-x-4 flex-1'>
-                      <CiFacebook className='text-xl' />
-                      <BsTwitterX className='text-xl' />
-                      <FaLinkedin className='text-xl' />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className='max-w-7xl flex justify-between mx-auto px-4 lg:px-8'>
+              {footerItems.map((item, index) => (
+                <div key={index} className=' bg-gray-950 rounded-3xl  w-60 py-4'>
+                  <p className='text-left lg:text-center font-semibold'>
+                    {item.title}
+                  </p>
+                  {item.icons ? (
+                    <div className='flex items-center justify-start lg:justify-center space-x-4 mt-2 '>
+                      {item.icons.map(({ Icon, link }, iconIndex) => (
+                        <Link
+                          key={iconIndex}
+                          href={link}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          <Icon className='text-xl' />
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.link}
+                      className='text-left lg:text-center block mt-2'
+                    >
+                      {item.text}
+                    </Link>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
         <div className='py-6 text-center bg-[#7E53D4] text-white text-sm'>
-          © 2024 | SuitTrack
+          All rights reserved © 2024 | SuiteTrack
         </div>
       </footer>
     </div>
   );
-}
-export default Footer
+};
+export default Footer;

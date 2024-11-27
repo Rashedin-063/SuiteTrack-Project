@@ -1,10 +1,12 @@
+import Link from "next/link"
+
 const Navbar = () => {
   return (
-    <header className="p-4 dark:bg-gray-100 dark:text-gray-800">
+    <header className="p-4  text-lightPrimary">
       <div className="container flex justify-between h-16 mx-auto">
-        <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
-          <h2>SuiteTrack</h2>
-        </a>
+        <Link href="/"  rel="noopener noreferrer" aria-label="Back to homepage" className="flex items-center p-2">
+          <h2 className="text-2xl lg:text-3xl font-bold">Suite<span className="text-lightSecondary">Track</span></h2>
+        </Link>
         <ul className="items-stretch hidden space-x-3 lg:flex">
           <li className="flex">
             <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600">Link</a>
