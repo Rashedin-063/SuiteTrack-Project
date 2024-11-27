@@ -9,7 +9,7 @@ export function Review() {
     return (
         <div className="max-w-screen-xl mx-auto bg-[#1A1A1D]">
             <section className="py-12 ">
-                <h2 className="text-4xl text-[#FEF9F2] text-center font-bold">Our client review</h2>
+                <h2 className="text-4xl text-[#FEF9F2] text-center font-bold">Our client Review</h2>
                 <p className="text-center py-2 text-gray-600 ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, amet! Ducimus temporibus molestias qui <br />
                     deleniti eveniet possimus amet iste eum.
