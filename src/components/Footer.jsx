@@ -8,7 +8,7 @@ const Footer = () => {
       <div className='bg-[rgb(29,29,29)] lg:py-12 lg:px-24 p-4 mt-20 text-white'>
         <div className='flex flex-col lg:flex lg:flex-row lg:space-x-8 space-y-6 lg:space-y-0'>
           <div className='space-y-6'>
-            <h3>SuitTrack</h3>
+            <h3 className="font-semibold text-3xl text-white">SuitTrack</h3>
             <p className="text-sm">Saepe quo suscipit vitae quia. Repudiandae nobis quis. Laboriosam unde quae qui quasi mollitia tenetur. Dicta explicabo est consectetur maxime quos fugit velit assumenda est. </p>
           </div>
           <div className='space-y-2'>
@@ -33,7 +33,7 @@ const Footer = () => {
               </thead>
               <tbody className="flex flex-col lg:flex-row w-full justify-between">
                 <tr className="flex flex-col lg:flex-row lg:space-x-8 w-full">
-                  <td className="text-left lg:text-center flex-1">support@we5ive.com</td>
+                  <td className="text-left lg:text-center flex-1">support@SuitTrack.com</td>
                   <td className="text-left lg:text-center flex-1">Contact Us</td>
                   <td className="text-left lg:text-center flex-1">Terms & Conditions</td>
                   <td className="flex items-center justify-start lg:justify-center space-x-4 flex-1">
@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='py-6 text-center bg-[#7E53D4] text-white text-sm'>
-        © 2024 | We5ive
+        © 2024 | SuitTrack
       </div>
     </div>
   )
