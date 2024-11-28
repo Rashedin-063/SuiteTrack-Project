@@ -43,7 +43,7 @@ const Facilities = () => {
     return (
         <>
             <Carousel
-                plugins={[Autoplay({ delay: 1500 })]}
+                plugins={[Autoplay({ delay: 3000 })]}
                 opts={{
                     align: "start",
                 }}
@@ -53,7 +53,7 @@ const Facilities = () => {
                     {
                         message.map((data, index) => (
                             <CarouselItem key={index} className="">
-                                <div className="border-2 border-white bg-black w-[1100px] h-[500px] mx-auto flex items-center p-10">
+                                <div className="border-2 border-white bg-black w-full h-[500px] mx-auto flex items-center p-10 rounded-3xl">
                                     <div className="flex-1">
                                         <div className="flex items-center gap-4">
                                             <p className="border-4 border-red-700 bg-red-700 w-6 h-6"></p>
