@@ -46,7 +46,6 @@ export default function Register() {
             await saveUser(registeredUser)
         }catch(error){
             console.log(error);
-            // toast.error(error.message)
         }
     }
     return (
