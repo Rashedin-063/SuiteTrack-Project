@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Lottie from 'lottie-react';
 import faq from '../../../public/faq.json'
 import FaqText from './FaqText'
