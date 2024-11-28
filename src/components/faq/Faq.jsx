@@ -8,7 +8,7 @@ import FaqText from './FaqText'
 
 
 const Faq = () => {
- 
+//   faq 
 
   return (
     <div className='max-w-screen-xl text-black mx-auto py-16'>
