@@ -1,8 +1,8 @@
-import Hero from '@/components/Hero';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import Services from '@/components/Services';
-import FeaturedSection from '@/components/FeaturedSection';
+import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Services from "@/components/Services";
+import FeaturedSection from "@/components/FeaturedSection";
 
 export default function Home() {
   return (
@@ -11,8 +11,11 @@ export default function Home() {
         <div className=' max-w-7xl mx-auto px-5 lg:px-10'>
           <Navbar />
           <Hero />
+         <Facilities/>
           <FeaturedSection />
-          <Services />
+       <Services />
+        <Review />
+        <Faq />
         </div>
       </div>
       <div>
