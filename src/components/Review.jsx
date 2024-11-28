@@ -16,7 +16,7 @@ export function Review() {
                     deleniti eveniet possimus amet iste eum.
                 </p>
                 <div className="container mx-auto px-4">
-                    <Marquee gradient={false} speed={50}>
+                    <Marquee >
                         {reviews.map((review) => (
                             <div
                                 key={review.id}
