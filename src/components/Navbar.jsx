@@ -1,21 +1,20 @@
 import Link from "next/link"
-
 const Navbar = () => {
   return (
-    <header className="p-4  text-lightPrimary">
-      <div className="container flex justify-between h-16 mx-auto">
+    <header className="py-4  text-lightPrimary">
+      <div className="container flex justify-between items-center h-16 mx-auto">
         <Link href="/"  rel="noopener noreferrer" aria-label="Back to homepage" className="flex items-center p-2">
           <h2 className="text-2xl lg:text-3xl font-bold">Suite<span className="text-lightSecondary">Track</span></h2>
         </Link>
         <ul className="items-stretch hidden space-x-3 lg:flex">
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600">Link</a>
+            <Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Home</Link>
           </li>
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Home</a>
+            <Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">About</Link>
           </li>
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">About</a>
+            <Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Blog</Link>
           </li>
           <li  className="flex">
             <Link href="gallery" rel="noopener noreferrer"  className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Gallery</Link>
@@ -24,10 +23,7 @@ const Navbar = () => {
             <Link href="event" rel="noopener noreferrer"  className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Event</Link>
           </li>
           <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Blog</a>
-          </li>
-          <li className="flex">
-            <a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Contact</a>
+            <Link rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-">Contact</Link>
           </li>
         </ul>
         <div className="items-center flex-shrink-0 hidden lg:flex">
