@@ -36,7 +36,7 @@ export default function Register() {
         const password = form?.password?.value;
         const photoURL = form?.photoURL?.value;
 
-        console.log(username)
+        console.log(username, email)
 
         const hashPassword = bcrypt.hashSync(password, 14);
 
