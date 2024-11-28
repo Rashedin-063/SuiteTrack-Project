@@ -6,6 +6,11 @@ export const POST = async (req, {params}) => {
     try{
         const db = await connectDB();
         const userCollection = db.collection("users");
+        const query = {email : user?.email};
+        const isExists = await userCollection.findOne(query);
+        if(isExists){
+            return Promise.reject(new Error("This user is already registered!"));
+        }
         const result = await userCollection.insertOne(user)
         return NextResponse.json({message : "Added an user successfully", result}, {status : 200})
     }catch(error){

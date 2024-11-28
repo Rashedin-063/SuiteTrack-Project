@@ -20,6 +20,11 @@ export default function Register() {
         onSuccess : () => {
             toast.success("User Registration Successful!")
             router.push('/login')
+        },
+
+        onError : () => {
+            toast.error("This user is already registered!");
+            router.push('/login')
         }
     })
     const handleRegisterSubmit = async(event) => {
@@ -41,7 +46,7 @@ export default function Register() {
             await saveUser(registeredUser)
         }catch(error){
             console.log(error);
-            toast.error(error.message)
+            // toast.error(error.message)
         }
     }
     return (
