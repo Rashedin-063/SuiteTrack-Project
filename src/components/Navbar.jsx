@@ -1,6 +1,22 @@
+"use client"
+
+import { useQuery } from "@tanstack/react-query"
+import axios from "axios"
+import { useSession } from "next-auth/react"
 import Link from "next/link"
 
 const Navbar = () => {
+  const session = useSession()
+
+  const {data : user, isLoading} = useQuery({
+    queryKey : ['user', session?.data?.user?.email],
+    queryFn : async () => {
+      const {data} = await axios.get(`http://localhost:3000/api/me/${session?.data?.user?.email}`)
+      return data;
+    }
+  })
+
+  console.log(user);
   return (
     <header className="p-4  text-lightPrimary">
       <div className="container flex justify-between h-16 mx-auto">
@@ -25,7 +41,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <button className="self-center px-8 py-3 rounded">Sign in</button>
+          <Link href={'/login'} className="self-center px-8 py-3 rounded">Sign in</Link>
           <button className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-600 dark:text-gray-50">Sign up</button>
         </div>
         <button className="p-4 lg:hidden">

@@ -1,5 +1,8 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
+import ClientProvider from '@/providers/ClientProvider';
+import { Toaster } from 'react-hot-toast';
+import AuthProvider from '@/providers/AuthProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,7 +24,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} antialiased`}
       >
-        {children}
+        <ClientProvider>
+          <AuthProvider>
+            {children}
+            <Toaster />
+          </AuthProvider>
+        </ClientProvider>
       </body>
     </html>
   );
