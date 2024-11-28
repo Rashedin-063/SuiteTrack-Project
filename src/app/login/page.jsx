@@ -51,7 +51,7 @@ export default function SignIn() {
           </div>
           <button className='btn btn-success btn-block text-white' type='submit'>Login</button>
         </form>
-        <p className='text-center text-sm'>Don't have any account? <Link href={'/register'} className='font-semibold text-blue-500'>Register</Link></p>
+        <p className='text-center text-sm'>Don&apos;t have any account? <Link href={'/register'} className='font-semibold text-blue-500'>Register</Link></p>
       </div>
     </div>
   )

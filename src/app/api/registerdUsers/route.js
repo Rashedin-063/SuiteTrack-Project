@@ -1,7 +1,7 @@
 import connectDB from "@/Libraries/connectDB"
 import { NextResponse } from "next/server"
 
-export const POST = async (req, {params}) => {
+export const POST = async (req) => {
     const user = await req.json()
     try{
         const db = await connectDB();

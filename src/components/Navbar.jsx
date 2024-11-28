@@ -8,7 +8,7 @@ import Link from "next/link"
 const Navbar = () => {
   const session = useSession()
 
-  const {data : user, isLoading} = useQuery({
+  const {data : user} = useQuery({
     queryKey : ['user', session?.data?.user?.email],
     queryFn : async () => {
       const {data} = await axios.get(`http://localhost:3000/api/me/${session?.data?.user?.email}`)
