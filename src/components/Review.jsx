@@ -6,6 +6,7 @@ import Marquee from "react-fast-marquee";
 import { IoStar } from "react-icons/io5";
 
 export function Review() {
+    // review section 
     return (
         <div className="max-w-screen-xl mx-auto bg-[#1A1A1D]">
             <section className="py-12 ">
