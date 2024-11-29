@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import Services from "@/components/Services";
 import FeaturedSection from "@/components/FeaturedSection";
 import Facilities from "@/components/Facilities";
 import { Review } from "@/components/Review";
@@ -17,9 +16,9 @@ export default function Home() {
           <Hero />
      <Facilities/>
           <FeaturedSection />
-          {/* <Services />
+
           <Review />
-          <Faq /> */}
+          {/* <Faq /> */}
         </div>
       </div>
       <div>
