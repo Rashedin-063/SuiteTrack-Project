@@ -14,8 +14,8 @@ export default function Home() {
       <div className='bg-lightBackground '>
         <div className=' max-w-7xl mx-auto px-5 lg:px-10'>
           <Navbar />
-          {/* <Hero />
-     <Facilities/>
+          <Hero />
+     {/* <Facilities/>
           <FeaturedSection />
           <Services />
           <Review />
