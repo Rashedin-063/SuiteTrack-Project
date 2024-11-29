@@ -16,8 +16,8 @@ export default function Home() {
           <Navbar />
           <Hero />
      <Facilities/>
-          {/* <FeaturedSection />
-          <Services />
+          <FeaturedSection />
+          {/* <Services />
           <Review />
           <Faq /> */}
         </div>
