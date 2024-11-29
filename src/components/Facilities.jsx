@@ -20,9 +20,6 @@ import { message } from "@/data";
 
 
 const Facilities = () => {
-
-  
-
     return (
         <>
             <Carousel
