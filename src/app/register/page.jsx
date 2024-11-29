@@ -1,6 +1,6 @@
 "use client"
 
-import TopSection from '@/Components/shared/TopSection'
+import TopSection from '@/components/shared/TopSection'
 import Link from 'next/link';
 import React from 'react'
 import { useMutation } from '@tanstack/react-query';
@@ -22,7 +22,8 @@ export default function Register() {
             router.push('/login')
         },
 
-        onError : () => {
+        onError: (error) => {
+            console.error(error);
             toast.error("This user is already registered!");
             router.push('/login')
         }

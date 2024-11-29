@@ -1,6 +1,6 @@
 "use client"
 
-import TopSection from '@/Components/shared/TopSection'
+import TopSection from '@/components/shared/TopSection'
 import Link from 'next/link';
 import React from 'react'
 import toast from 'react-hot-toast';
