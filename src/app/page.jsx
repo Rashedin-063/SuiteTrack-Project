@@ -4,21 +4,18 @@ import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
 import FeaturedSection from "@/components/FeaturedSection";
 import Facilities from "@/components/Facilities";
-import Review from "@/components/Review";
-import Faq from "@/components/faq/Faq";
 
 export default function Home() {
   return (
     <>
+
       <div className='bg-lightBackground '>
         <div className=' max-w-7xl mx-auto px-5 lg:px-10'>
           <Navbar />
           <Hero />
-         <Facilities/>
+     <Facilities/>
           <FeaturedSection />
-       <Services />
-        <Review />
-        <Faq />
+          <Services />
         </div>
       </div>
       <div>
