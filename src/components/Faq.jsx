@@ -10,8 +10,6 @@ const Faq = () => {
     <div className='max-w-screen-xl text-black mx-auto py-16'>
    <h1 className='text-center text-4xl font-bold '> Frequently Asked Questions</h1>
       <div className="grid grid-cols-1 bg-[#FEF9F2] rounded-lg shadow-md md:grid-cols-2 gap-8 items-center p-8">
-      {/* lottie  */}
-
       <Lottie animationData={faq} className="w-full h-auto max-w-md" />
       <div className="space-y-4">
 			<details className="w-full  rounded-lg">
