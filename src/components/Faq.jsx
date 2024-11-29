@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Lottie from 'lottie-react';
-// import faq from '../../public/faq.json'
+import faq from '../../public/faq.json'
 
 
 const Faq = () => {
@@ -10,7 +10,7 @@ const Faq = () => {
     <div className='max-w-screen-xl text-black mx-auto py-16'>
    <h1 className='text-center text-4xl font-bold '> Frequently Asked Questions</h1>
       <div className="grid grid-cols-1 bg-[#FEF9F2] rounded-lg shadow-md md:grid-cols-2 gap-8 items-center p-8">
-      {/* <Lottie animationData={faq} className="w-full h-auto max-w-md" /> */}
+      <Lottie animationData={faq} className="w-full h-auto max-w-md" />
       <div className="space-y-4">
 			<details className="w-full  rounded-lg">
 				<summary className="px-4 py-6 text-gray-800">Ex orci laoreet egestas sapien magna egestas scelerisque?</summary>
