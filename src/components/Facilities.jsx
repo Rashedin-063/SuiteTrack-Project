@@ -40,7 +40,7 @@ const Facilities = () => {
                                             <h1 className="text-5xl font-bold text-white uppercase">Our Facilities</h1>
                                         </div>
                                         <button className="text-white font-thin uppercase border-2 border-white flex items-center gap-2 p-2 my-8 hover:bg-slate-800">Discover More <span className="text-red-700"><FaArrowRightLong></FaArrowRightLong></span></button>
-                                        <p className="border-l-2 border-white ml-6 pl-10 pr-8 py-4">A modern hotel offers a range of facilities to cater to diverse guest needs. From luxurious accommodations to state-of-the-art amenities, hotels strive to provide an unforgettable experience</p>
+                                        <p className="border-l-2 border-white ml-6 pl-10 pr-8 py-4">A modern hotel offers a range of facilities to cater to diverse guest needs. From luxurious accommodations to state-of-the-art amenities, hotels strive to provide an unforgettable experience.</p>
                                     </div>
                                     <div className="flex-1">
                                         <div className="flex justify-between items-center">
