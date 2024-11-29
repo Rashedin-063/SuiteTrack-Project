@@ -15,30 +15,13 @@ import img3 from "../Images/spa.png"
 import img4 from "../Images/bar.png"
 import img5 from "../Images/banquet.png"
 import img6 from "../Images/gym.png"
-import { FaArrowRightLong } from "react-icons/fa6";
-import { FaArrowDown } from "react-icons/fa";
+import {FaArrowDown, FaArrowRightLong} from "@/data/icons"
+import { message } from "@/data";
 
 
 const Facilities = () => {
 
-    const message = [
-        {
-            id: 1,
-            title: "Bed"
-        },
-        {
-            id: 1,
-            title: "sofa"
-        },
-        {
-            id: 1,
-            title: "chair"
-        },
-        {
-            id: 1,
-            title: "Table"
-        }
-    ]
+  
 
     return (
         <>

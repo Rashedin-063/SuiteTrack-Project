@@ -25,4 +25,22 @@ export const features = [
   },
 ];
 
+export  const message = [
+  {
+    id: 1,
+    title: 'Bed',
+  },
+  {
+    id: 1,
+    title: 'sofa',
+  },
+  {
+    id: 1,
+    title: 'chair',
+  },
+  {
+    id: 1,
+    title: 'Table',
+  },
+];
 
