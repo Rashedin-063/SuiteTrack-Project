@@ -1,9 +1,10 @@
 "use client"
 
 import React from 'react';
-import Lottie from 'lottie-react';
-import faq from '../../public/faq.json'
-
+import dynamic from 'next/dynamic'; //
+// import Lottie from 'lottie-react';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+import faq from "@/data/faq"
 
 const Faq = () => {
   return (
