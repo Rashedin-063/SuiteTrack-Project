@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
 import FeaturedSection from "@/components/FeaturedSection";
 import Facilities from "@/components/Facilities";
+import { Review } from "@/components/Review";
+import Faq from "@/components/Faq";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
      <Facilities/>
           <FeaturedSection />
           <Services />
+          <Review />
+          <Faq />
         </div>
       </div>
       <div>
