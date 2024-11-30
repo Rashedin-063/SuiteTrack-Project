@@ -3,7 +3,7 @@ import { FaArrowRightLong } from "react-icons/fa6"
 const Hero = () => {
   return (
     <div>
-      <div className="bg-no-repeat bg-cover bg-center rounded-3xl px-32 pt-32" style={{ backgroundImage: "url(https://i.postimg.cc/9X9JZgWH/interior-design-neoclassical-style-with-furnishings-decor-1.jpg)" }}>
+      <div className="bg-no-repeat bg-cover bg-center rounded-3xl px-32 pt-44" style={{ backgroundImage: "url(https://i.postimg.cc/9X9JZgWH/interior-design-neoclassical-style-with-furnishings-decor-1.jpg)" }}>
         <h6 className="text-center text-5xl text-white font-thin max-w-3xl mx-auto uppercase">Indulge Your Wanderlust: Book Your Stay</h6>
         <div className="bg-[#00000099] m-10 p-4">
           <form className="flex justify-center border-2 border-[#bd9966] rounded-tl-3xl rounded-br-3xl relative p-8 m-10" action="">
