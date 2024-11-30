@@ -1,5 +1,5 @@
 import Link from "next/link"
-import LoginForm from "./ui/LoginForm"
+import AuthForm from './ui/AuthForm';
 
 
 
@@ -76,8 +76,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className='items-center flex-shrink-0 hidden lg:flex'>
-     <LoginForm/>
-         
+          <AuthForm />
         </div>
       </div>
     </header>
