@@ -79,7 +79,7 @@ const Navbar = () => {
           <li className='flex'>
             <Link
               rel='noopener noreferrer'
-              href='#'
+              href='/contact'
               className='flex items-center px-4 -mb-1 border-b-2 dark:border-'
             >
               Contact
