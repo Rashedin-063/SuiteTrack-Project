@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/material": "^6.1.9",
     "@radix-ui/react-slot": "^1.1.0",
     "@shadcn/ui": "^0.0.4",
     "@tanstack/react-query": "^5.62.0",

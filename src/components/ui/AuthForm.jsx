@@ -16,6 +16,7 @@ const AuthForm = async () => {
           <Image
             src={session?.user?.image}
             alt={session?.user?.name}
+            referrerPolicy='no-referrer'
             width={36}
             height={36}
             className='rounded-full'
