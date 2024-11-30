@@ -31,11 +31,11 @@ const Navbar = () => {
           </h2>
         </Link>
         <ul className='items-stretch hidden space-x-3 lg:flex'>
-          <li className='flex'>
+          <li className='flex '>
             <Link
               rel='noopener noreferrer'
               href='#'
-              className='flex items-center px-4 -mb-1 border-b-2 dark:border-'
+              className='flex items-center px-4 -mb-1 border-b-2'
             >
               Home
             </Link>
