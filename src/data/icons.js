@@ -1,4 +1,4 @@
 import { FaArrowRightLong } from 'react-icons/fa6';
-import { FaArrowDown } from 'react-icons/fa';
+import { FaArrowDown, FaGithub, FaGoogle } from 'react-icons/fa';
 
-export {FaArrowDown, FaArrowRightLong}
+export { FaArrowDown, FaArrowRightLong, FaGithub, FaGoogle };
