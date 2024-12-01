@@ -33,7 +33,7 @@ const Navbar = () => {
             <Link
               rel='noopener noreferrer'
               href='about'
-              className='flex items-center px-4 -mb-1 border-b-2 dark:border-'
+              className='flex items-center px-4 -mb-1 border-b-2 text-white hover:underline'
             >
               Rooms
             </Link>
