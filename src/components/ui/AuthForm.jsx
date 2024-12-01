@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const AuthForm = async () => {
   const session = await auth();
-  console.log(session);
+  // console.log(session);
   return (
     <div>
       {session ? (
