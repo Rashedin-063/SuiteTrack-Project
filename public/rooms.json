@@ -1,0 +1,15 @@
+[
+  {
+    "roomId": 101,
+    "roomType": "Deluxe",
+    "image" : "https://i.ibb.co.com/8YDSm5H/5.jpg",
+    "bedType": "King Bed",
+    "beds": 1,
+    "maxOccupancy": 2,
+    "roomSize": "40 sqm",
+    "view": "City View",
+    "bathroomType": "Ensuite",
+    "floor": 3,
+    "additionalDetails": ["Balcony", "Soundproof", "No Kitchenette"]
+  }
+]
