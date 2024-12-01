@@ -1,14 +1,12 @@
 import React from 'react';
 import { features } from '@/data'
-// import { Fade } from 'react-awesome-reveal';
+import SectionTitle from './SectionTitle';
 
 const FeaturedSection = () => {
   return (
     <section className=' py-12'>
+      <SectionTitle heading="Features & Amenities" description="Create lasting memories with your loved ones. Our family-friendly hotel offers a range of activities and amenities, including a kids' club, outdoor pool, and spacious family rooms."></SectionTitle>
       <div className='container mx-auto text-center'>
-        <h2 className='text-3xl lg:text-4xl xl:text-5xl font-bold text-lightPrimary mb-8 lg:mb-12'>
-          Features & Services
-        </h2>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 '>
           {/* <Fade direction='up'> </Fade> */}
           {features.map((feature, index) => (
