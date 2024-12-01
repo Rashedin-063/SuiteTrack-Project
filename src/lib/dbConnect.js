@@ -2,9 +2,7 @@ import mongoose from "mongoose";
 
 const connection = {};
 console.log(process.env.MONGODB_URI);
-console.log(process.env.GOOGLE_CLIENT_ID);
-
-console.log('hello')
+const mongodb_uri = "mongodb+srv://suiteTrackOwner:XZ4bAc8QiCgXb2V2@cluster0.4qgkjzt.mongodb.net/suteTrack?retryWrites=true&w=majority&appName=Cluster0"
 
 async function dbConnect() {
   if (connection.isConnected){
@@ -12,13 +10,12 @@ async function dbConnect() {
     return;
   }
 
-
   try {
-    const db = await mongoose.connect(process.env.MONGODB_URI || '', {
+    const db = await mongoose.connect(mongodb_uri || '', {  
       useNewUrlParser: true,
-      useUnifiedTopology: true,
+     useUnifiedTopology: true,
     });
-    console.log(db);
+  
     connection.isConnected = db.connections[0].readyState;
     console.log('DB connected successfully');
   } catch (error) {
