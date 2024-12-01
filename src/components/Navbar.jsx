@@ -7,7 +7,7 @@ const Navbar = () => {
 
 
   return (
-    <header className='bg-[#00000066] p-4  text-lightPrimary fixed z-10'>
+    <header className='bg-[#00000080] p-4  text-lightPrimary fixed z-10'>
       <div className='container flex justify-between h-14 lg:min-w-[1168px] mx-auto'>
         <Link
           href='/'

@@ -28,7 +28,7 @@ const Offer = () => {
                                         }
                                     </ul>
                                     <Button
-                                        borderRadius="1.75rem"
+                                        borderradius="1.75rem"
                                         className="dark:bg-white dark:text-white border-neutral-200 dark:border-white bg-[#bd9966] text-white p-2 m-2 uppercase text-sm rounded-none"
                                     >
                                         Book now

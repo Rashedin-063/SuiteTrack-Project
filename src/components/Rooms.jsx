@@ -13,7 +13,7 @@ const Rooms = () => {
             <div className="h-[30rem] flex items-center justify-center gap-4">
                 {
                     roomInfo?.map((roomData) => (
-                        <DirectionAwareHover key={roomData.id} imageUrl={roomData.image} className="border-2 border-[#000000] relative">
+                        <DirectionAwareHover key={roomData.id} imageUrl={roomData.image} className="relative">
                             <div className="bg-[#00000026] p-2">
                                 <p className="font-bold text-xl flex justify-between items-center">{roomData.name}<BiLinkExternal /></p>
                                 <p className="font-normal text-sm">{roomData.size} SQ.FT/Rooms</p>
