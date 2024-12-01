@@ -4,18 +4,16 @@ import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
 import { IoStar } from "react-icons/io5";
+import SectionTitle from "./SectionTitle";
 
 export function Review() {
     // review section 
     return (
         <div className="max-w-screen-xl mx-auto bg-[#1A1A1D]">
-            <section className="py-12 ">
-                <h2 className="text-4xl text-[#FEF9F2] text-center font-bold">Our client Review</h2>
-                <p className="text-center py-2 text-gray-600 ">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, amet! Ducimus temporibus molestias qui <br />
-                    deleniti eveniet possimus amet iste eum.
-                </p>
-                <div className="container mx-auto px-4">
+            <section className="py-12  text-white">
+                <SectionTitle heading="Our client Review" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, amet! Ducimus temporibus molestias qui <br />
+                    deleniti eveniet possimus amet iste eum."></SectionTitle>
+                <div className="container mx-auto px-4 pt-8">
                     <Marquee >
                         {reviews.map((review) => (
                             <div

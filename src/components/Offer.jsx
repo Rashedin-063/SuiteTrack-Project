@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import deluxe from "../Images/deluxe_room.jpg";
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { Button } from './ui/button';
 import Marquee from 'react-fast-marquee';
@@ -19,8 +18,8 @@ const Offer = () => {
                                 backgroundImage: "url(https://i.postimg.cc/9X9JZgWH/interior-design-neoclassical-style-with-furnishings-decor-1.jpg)"
                             }}>
                                 <div className='border-2 border-[#bd9966] py-4 px-10'>
-                                    <h6 className='text-white text-5xl font-bold uppercase'>{offerData.offer}% <br />off</h6>
-                                    <h6 className='border-2 border-[#bd9966] p-2 m-4 text-xl'>{offerData.category} Room</h6>
+                                    <h6 className='text-white text-3xl font-bold uppercase'>{offerData.offer}% <br />off</h6>
+                                    <h6 className='border-2 border-[#bd9966] p-2 m-2 text-lg'>{offerData.category} Room</h6>
                                     <ul>
                                         {
                                             offerData.speciality?.map((facilities, index) => (
@@ -37,7 +36,7 @@ const Offer = () => {
                                     {/* <button className='bg-[#bd9966] text-white p-2 m-2 uppercase text-sm'>Book now</button> */}
                                 </div>
                             </div>
-                            <Image width={500} height={500} alt={offerData.category} src={offerData.image} className='w-[550px] h-[392px]' />
+                            <Image width={350} height={350} alt={offerData.category} src={offerData.image} className='w-[420px] h-[350px]' />
                         </div>
                     ))
                 }
