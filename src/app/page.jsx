@@ -5,7 +5,8 @@ import FeaturedSection from "@/components/FeaturedSection";
 import { Review } from "@/components/Review";
 import Faq from "@/components/Faq";
 import Offer from "@/components/Offer";
-import RoomSection from "@/components/RoomSection";
+import Rooms from "@/components/Rooms";
+import Amenities from "@/components/Amenities";
 
 export default function Home() {
   return (
@@ -16,7 +17,8 @@ export default function Home() {
           <Navbar />
           <Hero />
           <Offer />
-          <RoomSection />
+          <Rooms />
+          <Amenities />
           <FeaturedSection />
           <Review />
           <Faq />
