@@ -4,18 +4,18 @@ import AuthForm from './ui/AuthForm';
 
 
 const Navbar = () => {
-  
+
 
   return (
-    <header className='p-4  text-lightPrimary'>
-      <div className='container flex justify-between h-16 mx-auto'>
+    <header className='bg-[#00000080] p-4  text-lightPrimary fixed z-10'>
+      <div className='container flex justify-between h-14 lg:min-w-[1168px] mx-auto'>
         <Link
           href='/'
           rel='noopener noreferrer'
           aria-label='Back to homepage'
           className='flex items-center p-2'
         >
-          <h2 className='text-2xl lg:text-3xl font-bold'>
+          <h2 className='text-2xl lg:text-3xl font-bold text-white'>
             Suite<span className='text-lightSecondary'>Track</span>
           </h2>
         </Link>
@@ -24,7 +24,7 @@ const Navbar = () => {
             <Link
               rel='noopener noreferrer'
               href='#'
-              className='flex items-center px-4 -mb-1 border-b-2'
+              className='flex items-center px-4 -mb-1 text-white hover:underline'
             >
               Home
             </Link>
@@ -33,16 +33,16 @@ const Navbar = () => {
             <Link
               rel='noopener noreferrer'
               href='#'
-              className='flex items-center px-4 -mb-1 border-b-2 dark:border-'
+              className='flex items-center px-4 -mb-1 text-white hover:underline'
             >
-              About
+              Rooms
             </Link>
           </li>
           <li className='flex'>
             <Link
               rel='noopener noreferrer'
               href='gallery'
-              className='flex items-center px-4 -mb-1 border-b-2 dark:border-'
+              className='flex items-center px-4 -mb-1 text-white hover:underline'
             >
               Gallery
             </Link>
@@ -51,7 +51,7 @@ const Navbar = () => {
             <Link
               rel='noopener noreferrer'
               href='event'
-              className='flex items-center px-4 -mb-1 border-b-2 dark:border-'
+              className='flex items-center px-4 -mb-1 text-white hover:underline'
             >
               Event
             </Link>
@@ -60,16 +60,16 @@ const Navbar = () => {
             <Link
               rel='noopener noreferrer'
               href='#'
-              className='flex items-center px-4 -mb-1 border-b-2 dark:border-'
+              className='flex items-center px-4 -mb-1 text-white hover:underline'
             >
-              Blog
+              About
             </Link>
           </li>
           <li className='flex'>
             <Link
               rel='noopener noreferrer'
               href='/contact'
-              className='flex items-center px-4 -mb-1 border-b-2 dark:border-'
+              className='flex items-center px-4 -mb-1 text-white hover:underline'
             >
               Contact
             </Link>
