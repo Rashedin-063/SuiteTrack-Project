@@ -2,6 +2,7 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 
 let db;
 
+
 const connectDB = async () => {
     if (db) {
         return db
