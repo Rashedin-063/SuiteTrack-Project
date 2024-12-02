@@ -1,7 +1,7 @@
 
 const OurRoomPage = async() => {
   const fetchRooms = async () => {
-    const res = await fetch('http://localhost:3000/api/rooms');
+   const res = await fetch(`${process.env.BASE_URL}/api/rooms`);
     const roomData = await res.json();
     return roomData
   }
