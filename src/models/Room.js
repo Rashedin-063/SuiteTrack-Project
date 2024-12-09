@@ -1,9 +1,9 @@
-import mongoose, { Document, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.Promise = global.Promise;
 
-const roomSchema = new mongoose.Schema(
+const roomSchema = new Schema(
   {
     name: { type: String, required: true },
     rooms: { type: String, required: true },
