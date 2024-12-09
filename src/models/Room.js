@@ -10,8 +10,7 @@ const roomSchema = new Schema(
     isAvailable: { type: Boolean, required: true },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
-  },
-  { collection: 'roomCollection' }
+  }
 );
 
 const Room = mongoose.models.Room || mongoose.model('Room', roomSchema)
