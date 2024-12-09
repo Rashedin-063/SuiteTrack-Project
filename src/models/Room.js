@@ -6,10 +6,12 @@ import mongoose, { Schema } from "mongoose";
 const roomSchema = new Schema(
   {
     name: { type: String, required: true },
-    rooms: { type: String, required: true },
-    isAvailable: { type: Boolean, required: true },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now },
+    size: Number,
+    rent: Number,
+    image: String
+  },
+  {
+    timestamps: true,
   }
 );
 
