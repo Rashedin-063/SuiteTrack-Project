@@ -1,19 +1,18 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 
 const connection = {};
 
 async function dbConnect() {
-  if (connection.isConnected){
-    console.log("Already connected")
+  if (connection.isConnected) {
+    console.log('Already connected');
     return;
   }
 
   try {
     const db = await mongoose.connect(
-      'mongodb+srv://suiteTrackOwner:XZ4bAc8QiCgXb2V2@cluster0.4qgkjzt.mongodb.net/suiteTrack' ||
-        ''
+      'mongodb+srv://suiteTrackOwner:XZ4bAc8QiCgXb2V2@cluster0.4qgkjzt.mongodb.net/suiteTrack'
     );
-  
+
     connection.isConnected = db.connections[0].readyState;
     console.log('DB connected successfully');
   } catch (error) {
@@ -24,4 +23,4 @@ async function dbConnect() {
 
 dbConnect();
 
-export default dbConnect;
+module.exports = dbConnect;
