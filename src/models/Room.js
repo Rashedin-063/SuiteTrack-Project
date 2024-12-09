@@ -1,5 +1,8 @@
 import mongoose, { Document, Schema } from "mongoose";
 
+mongoose.connect(process.env.MONGODB_URI);
+mongoose.Promise = global.Promise;
+
 const roomSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
