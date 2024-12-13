@@ -4,6 +4,7 @@ import { DirectionAwareHover } from "./ui/direction-aware-hover";
 import Rating from '@mui/material/Rating';
 import { BiLinkExternal } from "react-icons/bi";
 import SectionTitle from "./SectionTitle";
+import Link from "next/link";
 
 const Rooms = () => {
 
@@ -28,7 +29,7 @@ const Rooms = () => {
                 }
             </div>
             <div className="flex justify-center">
-                <button className="bg-[#bd9966] text-white uppercase px-4 py-2">View More</button>
+                <Link href="/rooms"><button className="bg-[#bd9966] text-white uppercase px-4 py-2">View More</button></Link>
             </div>
         </div>
     );

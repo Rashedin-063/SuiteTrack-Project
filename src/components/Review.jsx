@@ -10,7 +10,7 @@ export function Review() {
     // review section 
     return (
         <div className="max-w-screen-xl mx-auto bg-[#1A1A1D]">
-            <section className="py-12  text-white">
+            <section className="py-12 text-white">
                 <SectionTitle heading="Our client Review" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, amet! Ducimus temporibus molestias qui <br />
                     deleniti eveniet possimus amet iste eum."></SectionTitle>
                 <div className="container mx-auto px-4 pt-8">

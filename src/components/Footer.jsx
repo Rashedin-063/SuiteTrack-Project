@@ -37,7 +37,7 @@ const Footer = () => {
           <div className='flex flex-col lg:flex lg:flex-row lg:justify-between space-y-6 lg:space-y-0'>
             <div className='space-y-6'>
               <h3 className='font-semibold text-3xl text-white'>
-                Suite<span className='text-lightSecondary'>Track</span>
+                Suite<span className='text-[#bd9966]'>Track</span>
               </h3>
               <p className='text-sm'>
                 Experience hospitality like never before. Discover comfort, luxury, and impeccable service at every step of your journey.
@@ -57,7 +57,7 @@ const Footer = () => {
                   placeholder='Your email address'
                   className='py-2 px-4 rounded-l-lg outline-none text-black'
                 />
-                <button className='px-4 py-2 bg-purple-500 text-white rounded-r-lg'>
+                <button className='px-4 py-2 bg-[#bd9966] text-white rounded-r-lg'>
                   Subscribe
                 </button>
               </div>
@@ -96,7 +96,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className='py-6 text-center bg-[#7E53D4] text-white text-sm'>
+        <div className='py-6 text-center bg-[#bd9966] text-white text-sm'>
           All rights reserved © 2024 | SuiteTrack
         </div>
       </footer>
