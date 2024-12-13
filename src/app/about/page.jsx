@@ -1,10 +1,13 @@
 "use client"
+
 import Image from 'next/image';
 import React from 'react';
 import { MdCurrencyExchange, MdOutlineBedroomParent } from 'react-icons/md';
 import { GiCctvCamera, GiClothes } from "react-icons/gi";
 import { FaFacebook, FaGithub, FaLinkedin, FaTv, FaTwitter, FaWifi } from 'react-icons/fa6';
 import { FaCoffee } from 'react-icons/fa';
+import Navbar from '@/components/Navbar';
+
 import Marquee from 'react-fast-marquee';
 import { IoStar } from 'react-icons/io5';
 import { motion } from 'framer-motion';
@@ -41,6 +44,39 @@ const Page = () => {
                     backgroundPosition: "center",
                 }}
             >
+                <div className="flex items-center justify-center h-full px-4 text-center bg-black bg-opacity-50">
+                    <h1 className="text-xl md:text-3xl lg:text-4xl font-semibold text-white">
+                        About Hotel
+                    </h1>
+                </div>
+            </div><br />
+            {/* about hottel */}
+            <div className="bg-gray-200 p-2">
+                <h1 className="text-3xl mt-2 font-bold text-center text-black">__About Our Hotel__</h1>
+                <div className="hero bg-gray-200 text-black p-2">
+
+                    <div className="hero-content flex-col lg:flex-row-reverse">
+                        <Image
+                            src="https://i.ibb.co.com/Q9ZJdZW/DM-XMAS-2023-008.jpg"
+                            width={500}
+                            height={300} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                        <div className='justify-start'>
+
+                            <p className="py-2">
+                                Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line
+                            </p>
+                            <p className="py-1 text-gray-500 text-justify">
+                                Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+                            </p>
+                            <p className="py-2 text-justify">
+                                At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* our services */}
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-neutral-content text-center">
                     <div className="max-w-md">
@@ -125,8 +161,13 @@ const Page = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                                 {services.map((service, index) => (
                                     <div key={index} className="flex items-start gap-6">
+
+                                        <div className="rounded-full bg-[#dbdbdb] p-6 flex-shrink-0">
+                                            <span className='text-3xl'> {service.icon}</span>
+
                                         <div className="rounded-full p-6 flex-shrink-0">
                                             <span className='text-3xl font-bold text-blue-600'> {service.icon}</span>
+
                                             {/* <MdOutlineBedroomParent className="w-8 h-8 text-[#B17F55]" /> */}
                                         </div>
                                         <div className="space-y-4">
@@ -240,7 +281,6 @@ const Page = () => {
                 </div>
             </section>
         </div >
-
     );
 };
 

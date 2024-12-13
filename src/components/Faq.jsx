@@ -5,7 +5,11 @@ import SectionTitle from './SectionTitle';
 import { StickyScroll } from './ui/sticky-scroll-reveal';
 import Image from 'next/image';
 import service from "../Images/hotel-room-service.jpg"
+
+import service2 from "../Images/staff-service.jpg"
+
 // import service2 from "../Images/staff-service.avif"
+
 
 const Faq = () => {
 	const content = [

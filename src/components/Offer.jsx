@@ -3,43 +3,43 @@ import React from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { Button } from './ui/button';
 import Marquee from 'react-fast-marquee';
+import Link from 'next/link';
 
 const Offer = () => {
   // console.log(offerInfo);
-    return (
-        <div className='mt-24'>
-            <Marquee>
-                {
-                    offerInfo?.map((offerData) => (
-                        <div key={offerData.id} className='flex justify-center items-center border-x-8 border-white'>
-                            <div className='bg-[#00000066] bg-blend-multiply text-[#bd9966] text-center border-r-4 p-4' style={{
-                                backgroundImage: "url(https://i.postimg.cc/9X9JZgWH/interior-design-neoclassical-style-with-furnishings-decor-1.jpg)"
-                            }}>
-                                <div className='border-2 border-[#bd9966] py-4 px-10'>
-                                    <h6 className='text-white text-3xl font-bold uppercase'>{offerData.offer}% <br />off</h6>
-                                    <h6 className='border-2 border-[#bd9966] p-2 m-2 text-lg'>{offerData.category} Room</h6>
-                                    <ul>
-                                        {
-                                            offerData.speciality?.map((facilities, index) => (
-                                                <li key={index} className='flex items-center gap-1'><FaArrowRightLong />{facilities}</li>
-                                            ))
-                                        }
-                                    </ul>
-                                    <Button
-                                        borderradius="1.75rem"
-                                        className="dark:bg-white dark:text-white border-neutral-200 dark:border-white bg-[#bd9966] text-white p-2 m-2 uppercase text-sm rounded-none"
-                                    >
-                                        Book now
-                                    </Button>
-                                    {/* <button className='bg-[#bd9966] text-white p-2 m-2 uppercase text-sm'>Book now</button> */}
-                                </div>
-                            </div>
-                            <Image width={350} height={350} alt={offerData.category} src={offerData.image} className='w-[420px] h-[350px]' />
-                        </div>
-                    ))
-                }
-            </Marquee>
-        </div >
+  return (
+    <div className='mt-24'>
+      <Marquee>
+        {
+          offerInfo?.map((offerData) => (
+            <div key={offerData.id} className='flex justify-center items-center border-x-8 border-white'>
+              <div className='bg-[#00000066] bg-blend-multiply text-[#bd9966] text-center border-r-4 p-4' style={{
+                backgroundImage: "url(https://i.postimg.cc/9X9JZgWH/interior-design-neoclassical-style-with-furnishings-decor-1.jpg)"
+              }}>
+                <div className='border-2 border-[#bd9966] py-4 px-10'>
+                  <h6 className='text-white text-3xl font-bold uppercase'>{offerData.offer}% <br />off</h6>
+                  <h6 className='border-2 border-[#bd9966] p-2 m-2 text-lg'>{offerData.category} Room</h6>
+                  <ul>
+                    {
+                      offerData.speciality?.map((facilities, index) => (
+                        <li key={index} className='flex items-center gap-1'><FaArrowRightLong />{facilities}</li>
+                      ))
+                    }
+                  </ul>
+                  <Link href="/rooms"><Button
+                    borderradius="1.75rem"
+                    className="dark:bg-white dark:text-white border-neutral-200 dark:border-white bg-[#bd9966] text-white p-2 m-2 uppercase text-sm rounded-none"
+                  >
+                    Book now
+                  </Button></Link>
+                </div>
+              </div>
+              <Image width={500} height={500} alt={offerData.category} src={offerData.image} className='w-[450px] h-[350px]' />
+            </div>
+          ))
+        }
+      </Marquee>
+    </div >
   );
 };
 

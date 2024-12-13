@@ -140,7 +140,7 @@ const FeaturedSection = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-24">
       <Timeline data={data} />
     </div>
   );
