@@ -100,45 +100,108 @@
         "img": "https://i.ibb.co.com/Qj7PD1P/online-cooking-class-3.jpg"
     },
     {
-        "eventId": "1",
+        "eventId": 1,
         "eventName": "Tech Conference 2024",
         "eventDate": "2024-12-15",
         "eventTime": "10:00 AM",
         "description": "An inspiring conference for tech enthusiasts featuring industry leaders.",
         "venue": "Tech Arena, Silicon Valley",
         "organizer": "InnovateX",
+        "guests": "50k",
         "img": "https://i.ibb.co.com/1mKPKDz/online-cooking-class-3.jpg"
       },
       {
-        "eventId": "2",
+        "eventId": 2,
         "eventName": "Art & Culture Fest",
         "eventDate": "2024-12-20",
         "eventTime": "5:00 PM",
+        "guests": "1k",
         "description": "A celebration of art, music, and culture with live performances and workshops.",
         "venue": "City Art Center, New York",
         "organizer": "Artify",
         "img": "https://i.ibb.co.com/Bfxc0qp/2-sinulog.webp"
       },
       {
-        "eventId": "3",
+        "eventId": 3,
         "eventName": "Startup Networking Night",
         "eventDate": "2024-12-10",
         "eventTime": "6:30 PM",
         "description": "A networking event for startup founders, investors, and entrepreneurs.",
         "venue": "Business Hub, Seattle",
         "organizer": "Startup Circle",
+        "guests": "3k",
         "img": "https://i.ibb.co.com/dWTLQKS/images.jpg"
       },
       {
-        "eventId": "4",
+        "eventId": 4,
         "eventName": "Coding Bootcamp",
         "eventDate": "2024-12-05",
         "eventTime": "9:00 AM",
         "description": "A bootcamp for beginners to learn web development and build their first project.",
         "venue": "CodeLab Academy, San Francisco",
         "organizer": "CodeLab",
+        "guests": "5k",
         "img": "https://i.ibb.co.com/NytBRFH/images-1.jpg"
-      }
+      },
+      {
+        "eventId": 7,
+        "eventName": "Spring Festival",
+        "eventDate": "2024-04-10",
+        "eventTime": "10:00",
+        "description": "Celebrate the arrival of spring with flower displays, local food stalls, and cultural performances.",
+        "venue": "Central Park",
+        "guests": 1000,
+        "organizer": "City Events Co.",
+        "img": "https://i.ibb.co.com/KVynL2M/images.jpg"
+    },
+    {
+        "eventId": 8,
+        "eventName": "Tech Innovators Meetup",
+        "eventDate": "2024-07-15",
+        "eventTime": "18:00",
+        "description": "Connect with industry leaders, share ideas, and explore the future of technology.",
+        "venue": "Innovation Hub",
+        "guests": 250,
+        "organizer": "Tech Pioneers",
+        "img": "https://i.ibb.co.com/4PHXKPn/Chester-Tech-Meet-Up-1-1440x810.png"
+    },
+    {
+        "eventId": 9,
+        "eventName": "Summer Beach Party",
+        "eventDate": "2024-08-20",
+        "eventTime": "14:00",
+        "description": "Enjoy live DJ performances, beach games, and refreshing cocktails by the sea.",
+        "venue": "Ocean Breeze Beach",
+        "guests": 500,
+        "organizer": "Fun Waves Co.",
+        "img": "https://i.ibb.co.com/qxftrnQ/b269e33e-b7d6-4839-a9f7-9ebd037b61a1.png"
+    },
+    {
+        "eventId": 10,
+        "eventName": "Art & Wine Night",
+        "eventDate": "2024-11-05",
+        "eventTime": "19:30",
+        "description": "Experience an evening of fine art, wine tasting, and live acoustic music.",
+        "venue": "Gallery Elite",
+        "guests": 200,
+        "organizer": "Artisans' League",
+        "img": "https://i.ibb.co.com/fXNSNbD/99086105-capture.png"
+    },
+    {
+        "eventId": 11,
+        "eventName": "Charity Gala Dinner",
+        "eventDate": "2024-12-10",
+        "eventTime": "20:00",
+        "description": "Join us for an elegant evening to support a noble cause with a three-course meal and live auction.",
+        "venue": "Grand Horizon Ballroom",
+        "guests": 350,
+        "organizer": "Hope Foundation",
+        "img": "https://i.ibb.co.com/8PmGykk/images-2.jpg"
+    }
+    
+  
+    
+   
 ]
 
 

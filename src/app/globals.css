@@ -19,3 +19,11 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  input,
+  select,
+  textarea {
+    @apply  rounded  bg-[#47566a] p-1;
+  }
+}
