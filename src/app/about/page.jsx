@@ -88,8 +88,7 @@ const Page = () => {
                         {/* <button className="btn btn-primary">Get Started</button> */}
                     </div>
                 </div>
-            </div>
-
+        
 
             {/* New Section 5: Eco-Friendly Initiatives */}
             <section className="py-20 bg-green-50">
@@ -165,20 +164,20 @@ const Page = () => {
                                         <div className="rounded-full bg-[#dbdbdb] p-6 flex-shrink-0">
                                             <span className='text-3xl'> {service.icon}</span>
 
-                                        <div className="rounded-full p-6 flex-shrink-0">
-                                            <span className='text-3xl font-bold text-blue-600'> {service.icon}</span>
+                                            <div className="rounded-full p-6 flex-shrink-0">
+                                                <span className='text-3xl font-bold text-blue-600'> {service.icon}</span>
 
-                                            {/* <MdOutlineBedroomParent className="w-8 h-8 text-[#B17F55]" /> */}
-                                        </div>
-                                        <div className="space-y-4">
-                                            <h2 className="text-2xl font-serif">{service.title}</h2>
-                                            <p className="text-gray-400 leading-relaxed">
-                                                {service.description}
-                                            </p>
+                                                {/* <MdOutlineBedroomParent className="w-8 h-8 text-[#B17F55]" /> */}
+                                            </div>
+                                            <div className="space-y-4">
+                                                <h2 className="text-2xl font-serif">{service.title}</h2>
+                                                <p className="text-gray-400 leading-relaxed">
+                                                    {service.description}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -280,7 +279,9 @@ const Page = () => {
                     </div>
                 </div>
             </section>
-        </div >
+            </div >
+                </div>
+
     );
 };
 
