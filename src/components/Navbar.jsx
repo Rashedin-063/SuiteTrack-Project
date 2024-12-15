@@ -7,8 +7,8 @@ const Navbar = () => {
 
 
   return (
-    <header className='p-4  text-lightPrimary fixed z-10 bg-[#00000066]'>
-      <div className='container flex justify-around h-16 lg:min-w-[1168px] mx-auto'>
+    <header className='p-4 container mx-auto px-5 lg:px-10 text-lightPrimary fixed z-50  bg-black/60 w-[94.7%]'>
+      <div className=' flex justify-between  h-16'>
         <Link
           href='/'
           rel='noopener noreferrer'
