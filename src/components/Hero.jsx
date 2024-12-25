@@ -27,22 +27,22 @@ const Hero = () => {
           <h6 className='text-center text-4xl text-white font-bold max-w-2xl mx-auto uppercase'>
             Indulge Your Wanderlust: Book Your Stay
           </h6>
-          <div className='bg-[#00000099] m-10 p-4'>
+          <div className=' m-10 p-4'>
             <form
               onSubmit={handleSubmit}
-              className='flex justify-center border-2 border-[#bd9966] rounded-tl-3xl rounded-br-3xl p-8 m-10'
+              className='flex justify-center border-2 border-[#bd9966] rounded-tl-3xl rounded-br-3xl p-8 m-10 bg-[#08080899]'
               action=''
             >
               <Space direction='horizontal' size={12}>
                 <RangePicker
                   name='duration'
-                  className='rounded-l-3xl bg-[#f9fafb80] border-x-2 border-y-0 rounded-r-none text-black py-4 pl-8'
+                  className='rounded-l-3xl bg-[#b8b8b6] border-x-2 border-y-0 rounded-r-none text-black  py-4 pl-8'
                 />
               </Space>
               <select
                 name='guest'
                 id=''
-                className='text-black bg-[#f9fafb80] py-3 px-6'
+                className='text-black bg-[#b8b8b6] hover:bg-white py-3 px-6'
               >
                 <option value=''>Guests</option>
                 <option value='1'>1</option>
@@ -54,7 +54,7 @@ const Hero = () => {
               <select
                 name='room'
                 id=''
-                className='bg-[#f9fafb80] border-x-2 text-black py-3 px-6'
+                className='bg-[#b8b8b6] hover:bg-white border-x-2 text-black py-3 px-6'
               >
                 <option value=''>Rooms</option>
                 <option value='1'>1</option>
@@ -65,7 +65,7 @@ const Hero = () => {
               </select>
               <Link
                 href='/rooms'
-                className='bg-[#bd9966] hover:bg-[#bd996680] text-white rounded-r-3xl flex items-center gap-2 px-3 py-2 uppercase'
+                className='bg-[#9f6411] hover:bg-[#bd9966] text-white rounded-r-3xl flex items-center gap-2 px-3 py-2 uppercase'
               >
                 check now
               </Link>
