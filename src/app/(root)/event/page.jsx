@@ -6,6 +6,7 @@ import { IoSearch, IoTimeOutline } from 'react-icons/io5';
 import { MdOutlineDateRange } from 'react-icons/md';
 
 const Page = () => {
+  // event 
   const [events, setEvents] = useState([]);
   const [originalEvents, setOriginalEvents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -44,7 +45,7 @@ const Page = () => {
   const totalPages = Math.ceil(events.length / eventsPerPage);
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
   return (
-    <div>
+    <div className='py-24'>
       <div className='max-w-7xl mx-auto px-4 py-2'>
         <section>
           <div
