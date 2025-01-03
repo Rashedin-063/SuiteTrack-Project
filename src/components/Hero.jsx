@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <div>
       <div
-        className='bg-no-repeat bg-cover bg-center bg-[#00000066] bg-blend-multiply rounded-b-3xl '
+        className='bg-no-repeat bg-cover bg-center bg-[#00000066] bg-blend-multiply rounded-b-2xl '
         style={{
           backgroundImage:
             'url(https://i.postimg.cc/yNg2zyCz/5c0f8a1f98d6aad9fd9a91ad72e2adf5photo15660737712596a8506099945.jpg)',
@@ -42,7 +42,7 @@ const Hero = () => {
               <select
                 name='guest'
                 id=''
-                className='text-black bg-[#b8b8b6] hover:bg-white py-3 px-6'
+                className='text-black bg-[#b8b8b6] hover:bg-white py-3 px-6 rounded-none'
               >
                 <option value=''>Guests</option>
                 <option value='1'>1</option>
@@ -54,7 +54,7 @@ const Hero = () => {
               <select
                 name='room'
                 id=''
-                className='bg-[#b8b8b6] hover:bg-white border-x-2 text-black py-3 px-6'
+                className='bg-[#b8b8b6] hover:bg-white border-x-2 text-black py-3 px-6 rounded-none'
               >
                 <option value=''>Rooms</option>
                 <option value='1'>1</option>
@@ -72,7 +72,7 @@ const Hero = () => {
             </form>
           </div>
         </div>
-        <div className='flex gap-8 text-white mt-12 py-8 px-4 bg-[#00000099] w-1/2 ml-2'>
+        <div className='flex justify-center gap-8 text-white mt-12 py-8 px-4 bg-[#00000099] w-1/2 ml-4'>
           <div>
             <h6 className='text-3xl'>300+</h6>
             <p>Destination</p>
