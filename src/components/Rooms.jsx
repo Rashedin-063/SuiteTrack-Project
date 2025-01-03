@@ -29,7 +29,7 @@ const Rooms = () => {
                 }
             </div>
             <div className="flex justify-center">
-                <Link href="/rooms"><button className="bg-[#bd9966] text-white uppercase px-4 py-2">View More</button></Link>
+                <Link href="/rooms"><button className="bg-[#bd9966] text-white uppercase px-4 py-2 hover:bg-[#bd996680]">View More</button></Link>
             </div>
         </div>
     );
