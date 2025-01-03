@@ -4,9 +4,7 @@ import Image from "next/image";
 import { FaArrowRightLong, FaBed } from "react-icons/fa6";
 import { FaUserFriends } from "react-icons/fa";
 import { Rating } from "@mui/material";
-import SectionTitle from "@/components/SectionTitle";
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
+import flower from "../../../Images/flower.png";
 
 const RoomPage = () => {
   const [roomsData, setRoomsData] = useState([]);
@@ -39,25 +37,27 @@ const RoomPage = () => {
     setRoomsData(roomInfo);
   }, [])
 
-  const handleFilter = e => {
+  const handleFilter = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
     const filteredValue = e.target.value;
-    const filteredRoom = roomInfo?.find(room => room.category = filteredValue);
+    console.log(filteredValue);
+    const filteredRoom = roomInfo?.find(room => room.category === filteredValue);
+    console.log(filteredRoom);
     setRoomsData(filteredRoom);
   }
   console.log(roomsData);
 
   return (
     <>
-      {/* <Navbar></Navbar> */}
-      <section className="bg-[#E2E1DF] min-h-screen text-black">
+      <section className="bg-[#E2E1DF] min-h-screen text-black mb-16">
         <div className="container mx-auto">
           <div className="">
             <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
               {/* Section Header */}
-              <div className="mb-10 md:mb-16 text-white py-36 bg-no-repeat bg-cover bg-center bg-[#00000080] bg-blend-multiply" style={{ backgroundImage: "url(https://i.postimg.cc/ht7Bf2hD/freepik-upload-55202.jpg)" }}>
-                <SectionTitle heading="Rooms & Suites" description="Explore our curated list of luxurious rooms with modern amenities." />
+              <div className="mb-10 md:mb-16 text-white py-48 bg-no-repeat bg-cover bg-center bg-[#00000080] bg-blend-multiply" style={{ backgroundImage: "url(https://i.postimg.cc/ht7Bf2hD/freepik-upload-55202.jpg)" }}>
+                <p className="flex justify-center items-center text-[#bd9966] mb-2">__________<Image width={40} height={40} alt="Flower" src={flower} />__________</p>
+                <h6 className="text-center text-white text-4xl font-semibold uppercase">Rooms & Suites</h6>
+                <p className="text-center text-white max-w-3xl mx-auto mt-2">Explore our curated list of luxurious rooms with modern amenities.</p>
               </div>
 
               {/* Room Cards */}
@@ -131,7 +131,7 @@ const RoomPage = () => {
                   </div>
                 </div>
                 <div className="w-2/3 grid gap-8 grid-cols-2">
-                  {roomsData?.map((room) => (
+                  {roomInfo?.map((room) => (
                     <div
                       key={room.id}
                       className="flex flex-col overflow-hidden rounded-lg border bg-white shadow-lg w-full relative"
@@ -173,7 +173,6 @@ const RoomPage = () => {
           </div>
         </div>
       </section>
-      {/* <Footer></Footer> */}
     </>
   );
 };

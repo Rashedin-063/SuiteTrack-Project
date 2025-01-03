@@ -1,13 +1,11 @@
 import Link from "next/link"
 import AuthForm from './ui/AuthForm';
 
-
-
 const Navbar = () => {
 
 
   return (
-    <header className='p-4 container mx-auto px-5 lg:px-10 text-lightPrimary fixed z-50  bg-black/60 w-[94.7%]'>
+    <header className='container mx-auto p-4 px-5 lg:px-10 text-lightPrimary fixed z-50  bg-black/60 w-[92.1%]'>
       <div className=' flex justify-between  h-16'>
         <Link
           href='/'
