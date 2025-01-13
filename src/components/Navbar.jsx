@@ -82,6 +82,9 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
+        <div>
+          <button>Login</button>
+        </div>
         <div className='items-center flex-shrink-0 hidden lg:flex'>
           <AuthForm />
         </div>
