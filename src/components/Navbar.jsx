@@ -72,6 +72,15 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
+          <li className='flex'>
+            <Link
+              rel='noopener noreferrer'
+              href='/dashboard'
+              className='flex items-center px-4 -mb-1 hover:underline'
+            >
+              Dashboard
+            </Link>
+          </li>
         </ul>
         <div className='items-center flex-shrink-0 hidden lg:flex'>
           <AuthForm />
