@@ -9,7 +9,9 @@ async function dbConnect() {
   }
 
   try {
-    const db = await mongoose.connect(process.env.MONGODB_URI);
+    const db = await mongoose.connect(
+      'mongodb+srv://suiteTrackOwner:XZ4bAc8QiCgXb2V2@cluster0.4qgkjzt.mongodb.net/suiteTrack'
+    );
 
     connection.isConnected = db.connections[0].readyState;
     console.log('DB connected successfully');
