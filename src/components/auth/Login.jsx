@@ -1,18 +1,29 @@
-'use client';
-
-import TopSection from '@/components/shared/TopSection';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import toast from 'react-hot-toast';
-import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { useState } from 'react';
+import SocialLogin from './SocialLogin';
+import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../hooks/useAuth';
+import LoginRegisterTitle from '../../components/LoginRegisterTitle';
 import { ImSpinner9 } from 'react-icons/im';
-import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 
-export default function SignIn() {
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { toast } from 'react-toastify';
+import { createOrUpdateUser } from '../../api/userApi';
+import swalAlert from '../../api/swalAlert';
+
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const router = useRouter();
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location?.state || '/';
+
+  const { logInUser, loading, setLoading } = useAuth();
 
   const {
     register,
@@ -21,60 +32,28 @@ export default function SignIn() {
   } = useForm();
 
   const onSubmit = async ({ email, password }) => {
-    console.log(email, password);
-    
-
-    // try {
-    //   const response = await signIn('credentials', {
-    //     email,
-    //     password,
-    //     redirect: false,
-    //   });
-
-    //   console.log(response);
-
-    //   if (response?.error) {
-    //     console.log('The error is : ', response.error);
-    //     toast.error(response.error);
-    //   }
-
-    //   if (response?.ok) {
-    //     toast.success('Login Successful!');
-    //     router.push('/');
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    //   toast.error(error?.message || 'Something went wrong!');
-    // }
+    try {
+      setLoading(true);
+      await logInUser(email, password);
+      swalAlert('success', 'Sign Up Successful', 'top-right');
+      navigate(from);
+    } catch (err) {
+      //console.log(err);
+      toast.error(err.message);
+      setLoading(false);
+    }
   };
 
-
-   const onSubmit2 = async ({ email, password }) => {
-      try {
-        setLoading(true);
-        await logInUser(email, password);
-        swalAlert('success', 'Sign Up Successful', 'top-right');
-        navigate(from);
-      } catch (err) {
-        //console.log(err);
-        toast.error(err.message);
-        setLoading(false);
-      }
-    };
-  
-
   return (
-    <div className='min-h-screen py-10 flex items-center justify-center'>
-      <div className='px-4 py-10 bg-gray-700 shadow-lg rounded-lg w-auto'>
-        <TopSection
-          heading={'Welcome Back to SuiteTrack'}
-          subheading={
-            'Log in to manage your bookings and unlock exclusive hotel deals!'
-          }
-        />
-        <hr className='mt-4' />
+    <div className='min-h-screen flex flex-col justify-center'>
+      <Helmet>
+        <title>Tech Insights || Login</title>
+      </Helmet>
+      <div>
+        <LoginRegisterTitle title='Please Sign In' />
         <form
           onSubmit={handleSubmit(onSubmit)}
+          className='w-3/4 lg:w-1/2 mx-auto'
         >
           <div className='form-control'>
             <label className='label'>
@@ -119,22 +98,30 @@ export default function SignIn() {
           <div className='form-control'>
             <button
               type='submit'
-              className='btn bg-green-700
-              hover:bg-green-800
-              hover text-base text-gray-300 border-none'
+              disabled={loading}
+              className='btn bg-green-lantern text-pure-white
+              hover:bg-deep-ocean
+              hover text-base text-light-cream'
             >
-              Sign In
+              {loading ? (
+                <ImSpinner9 className='animate-spin m-auto text-deep-ocean' />
+              ) : (
+                'Sign In'
+              )}
             </button>
           </div>
-          {/* <SocialLogin /> */}
+          <SocialLogin />
         </form>
-        <div className='text-center text-sm mt-6'>
-          Don&apos;t have any account?{' '}
-          <Link href={'/register'} className='font-semibold text-blue-500'>
+        <p className='text-center py-2 w-3/4 lg:w-1/2 mx-auto text-lg pt-6 pb-4'>
+          Do not have an account{' '}
+          <Link className='text-blue-600 font-bold' to='/register'>
             Register
           </Link>
-        </div>
+        </p>
+        <ToastContainer />
       </div>
     </div>
   );
-}
+};
+
+export default Login;
