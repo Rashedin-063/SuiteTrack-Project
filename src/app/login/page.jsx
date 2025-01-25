@@ -7,7 +7,6 @@ import toast from 'react-hot-toast';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
-import { ImSpinner9 } from 'react-icons/im';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 
 export default function SignIn() {
@@ -24,28 +23,28 @@ export default function SignIn() {
     console.log(email, password);
     
 
-    // try {
-    //   const response = await signIn('credentials', {
-    //     email,
-    //     password,
-    //     redirect: false,
-    //   });
+    try {
+      const response = await signIn('credentials', {
+        email,
+        password,
+        redirect: false,
+      });
 
-    //   console.log(response);
+      console.log(response);
 
-    //   if (response?.error) {
-    //     console.log('The error is : ', response.error);
-    //     toast.error(response.error);
-    //   }
+      if (response?.error) {
+        console.log('The error is : ', response.error);
+        toast.error(response.error);
+      }
 
-    //   if (response?.ok) {
-    //     toast.success('Login Successful!');
-    //     router.push('/');
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    //   toast.error(error?.message || 'Something went wrong!');
-    // }
+      if (response?.ok) {
+        toast.success('Login Successful!');
+        router.push('/');
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error?.message || 'Something went wrong!');
+    }
   };
 
 
