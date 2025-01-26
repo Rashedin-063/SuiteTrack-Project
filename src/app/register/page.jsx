@@ -67,7 +67,7 @@ export default function Register() {
         status: 'verified',
       };
 
-      const response = await fetch('/api/register', {
+      const response = await fetch('/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
