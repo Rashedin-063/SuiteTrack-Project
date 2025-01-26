@@ -60,7 +60,6 @@ export default function Register() {
         subscription: 'usual',
         role: 'user',
         status: 'verified',
-        premiumToken: null,
       };
     } catch (err) {
       //console.log('Error:', err);
@@ -128,7 +127,7 @@ export default function Register() {
         />
         <hr className='mt-4' />
         <form
-                  onSubmit={handleSubmit(handleRegister)}
+          onSubmit={handleSubmit(handleRegister)}
         >
           <div className='form-control'>
             <input
@@ -191,7 +190,7 @@ export default function Register() {
           <div className='form-control mt-6'>
             <button
               type='submit'
-              className='btn bg-green-700 text-white hover:bg-deep-ocean mt-2'
+              className='btn bg-green-700 text-white hover:bg-green-800 border-none mt-2'
             >
               Register
             </button>
