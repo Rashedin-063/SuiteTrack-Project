@@ -1,11 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
 const userSchema = new Schema({
-  name: {
-    required: true,
-    type: String,
-  },
-  password: {
+  displayName: {
     required: true,
     type: String,
   },
@@ -13,7 +9,29 @@ const userSchema = new Schema({
     required: true,
     type: String,
   },
+  hashedPassword: {
+    required: true,
+    type: String,
+  },
+  photoURL: {
+    required: true,
+    type: String,
+  },
+  subscription: {
+    required: true,
+    type: String,
+  },
+  role: {
+    required: true,
+    type: String,
+  },
+  status: {
+    required: true,
+    type: String,
+  },
+
 });
+
 
 export const User = mongoose.models.User ?? mongoose.model('User', userSchema);
 

@@ -14,6 +14,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { imageUpload } from '@/utils';
 
+
 // Zod schema for validation
 const schema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -50,12 +51,16 @@ export default function Register() {
   const handleRegister = async ({ name, email, password }) => {
     try {
       const image_url = await imageUpload(imageFile);
+      const hashedPassword = bcrypt.hashSync(password, 5);
 
+
+      // console.log(password, hashedPassword);
       // return console.log(name, email, password, image_url);
 
       const userInfo = {
         displayName: name,
         email,
+        hashedPassword,
         photoURL: image_url,
         subscription: 'usual',
         role: 'user',
@@ -63,18 +68,21 @@ export default function Register() {
       };
 
       const response = await fetch('/api/register', {
-  method: 'POST',
+        method: 'POST',
         headers: {
-          'content-type': 'application/json',
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(userInfo)
-})
+        body: JSON.stringify(userInfo),
+      });
 
-      response.status === 201 && router.push('/')
+      if (response.status === 201) {
+       toast.success("Successfully registered")
+       router.push('/');
+     }
 
 
     } catch (err) {
-      //console.log('Error:', err);
+      console.error('Error:', err);
       toast.error(err.message);
     } finally {
     }
