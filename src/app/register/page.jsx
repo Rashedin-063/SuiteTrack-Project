@@ -14,6 +14,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { imageUpload } from '@/utils';
 
+
 // Zod schema for validation
 const schema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -50,20 +51,38 @@ export default function Register() {
   const handleRegister = async ({ name, email, password }) => {
     try {
       const image_url = await imageUpload(imageFile);
+      const hashedPassword = bcrypt.hashSync(password, 5);
 
-      return console.log(name, email, password, image_url);
+
+      // console.log(password, hashedPassword);
+      // return console.log(name, email, password, image_url);
 
       const userInfo = {
         displayName: name,
         email,
+        hashedPassword,
         photoURL: image_url,
         subscription: 'usual',
         role: 'user',
         status: 'verified',
-        premiumToken: null,
       };
+
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userInfo),
+      });
+
+      if (response.status === 201) {
+       toast.success("Successfully registered")
+       router.push('/');
+     }
+
+
     } catch (err) {
-      //console.log('Error:', err);
+      console.error('Error:', err);
       toast.error(err.message);
     } finally {
     }
@@ -128,7 +147,7 @@ export default function Register() {
         />
         <hr className='mt-4' />
         <form
-                  onSubmit={handleSubmit(handleRegister)}
+          onSubmit={handleSubmit(handleRegister)}
         >
           <div className='form-control'>
             <input
@@ -191,7 +210,7 @@ export default function Register() {
           <div className='form-control mt-6'>
             <button
               type='submit'
-              className='btn bg-green-700 text-white hover:bg-deep-ocean mt-2'
+              className='btn bg-green-700 text-white hover:bg-green-800 border-none mt-2'
             >
               Register
             </button>
