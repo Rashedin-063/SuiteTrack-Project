@@ -51,7 +51,7 @@ export default function Register() {
     try {
       const image_url = await imageUpload(imageFile);
 
-      return console.log(name, email, password, image_url);
+      // return console.log(name, email, password, image_url);
 
       const userInfo = {
         displayName: name,
@@ -61,6 +61,18 @@ export default function Register() {
         role: 'user',
         status: 'verified',
       };
+
+      const response = await fetch('/api/register', {
+  method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(userInfo)
+})
+
+      response.status === 201 && router.push('/')
+
+
     } catch (err) {
       //console.log('Error:', err);
       toast.error(err.message);
