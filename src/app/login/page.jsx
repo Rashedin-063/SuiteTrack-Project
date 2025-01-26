@@ -8,9 +8,7 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
-import getSingleUser from '@/queries/getSingleUser';
 import { doCredentialLogin } from '../actions';
-import { bcrypt } from 'bcryptjs';
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -23,55 +21,21 @@ export default function SignIn() {
   } = useForm();
 
   const onSubmit = async ({ email, password }) => {
-   
-    const user = await getSingleUser(email);
-    
-     if (!user) {
-       toast.error('User not found, please register.');
-       return;
-     }  
-     
-    if (user) {
-      const isMatch = await bcrypt.compare(password, user.hashedPassword);
-         console.log(isMatch); 
-      if(isMatch) {
-        return user
+    const formData = {email, password}
+ 
+    try {
+      const response = await doCredentialLogin(formData);
+
+      if (!!response.error) {
+        toast.error(response.error);
+      } else {
+        router.push('/home');
       }
-    } else {
-      toast.error('User not found, please Register');
+    } catch (error) {
+       console.error(error);
+       toast.error('Check your Credentials');
     }
-    ;
-
-    //   if (!!response.error) {
-    //     console.error(response.error);
-    //     setError(response.error.message);
-    //   } else {
-    //     toast.success('Login Successful')
-    //     router.push('/home');
-    //   }
-
-    // try {
-    //   const response = await signIn('credentials', {
-    //     email,
-    //     password,
-    //     redirect: false,
-    //   });
-
-    //   console.log(response);
-
-    //   if (response?.error) {
-    //     console.log('The error is : ', response.error);
-    //     toast.error(response.error);
-    //   }
-
-    //   if (response?.ok) {
-    //     toast.success('Login Successful!');
-    //     router.push('/');
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    //   toast.error(error?.message || 'Something went wrong!');
-    // }
+     
   };
 
 

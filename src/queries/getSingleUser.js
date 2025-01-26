@@ -1,6 +1,7 @@
 async function getSingleUser(email) {
+  const encodedEmail = encodeURIComponent(email);
   try {
-    const response = await fetch(`/api/users/${email}`)
+    const response = await fetch(`/api/users/${encodedEmail}`);
     const {user} = await response.json()
     return user;
   } catch (error) {

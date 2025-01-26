@@ -1,8 +1,9 @@
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from 'next-auth/providers/github';
-// import CredentialsProvider from 'next-auth/providers/credentials';
-import { User } from '@/models/User';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import getSingleUser from '@/queries/getSingleUser';
+import bcrypt  from 'bcrypt';
 
 export const {
   handlers: { GET, POST },
@@ -11,37 +12,44 @@ export const {
   signOut,
 } = NextAuth({
   providers: [
-//     CredentialsProvider({
-//       credentials: {
-//         username: {},
-//         password: {},
-//       },
-//       async authorize(credentials) {
-//         if (credentials === null) return null;
-//  return console.log(credentials)
+    CredentialsProvider({
+      credentials: {
+        email: {},
+        password: {},
+      },
+      async authorize(credentials) {
+        console.log('the credentials', credentials)
+        if (credentials === null) return null;
 
-//         try {
-//           //  getting the user data
-//            const user = await User.findOne({ email: credentials?.email })
-//            return console.log(user)
-//           if (user) { 
-//             const isMatch = await bcrypt.compare(credentials?.password, user.hashedPassword);
+        try {
+          //  getting the user data
+        const response = await fetch(
+          `http://localhost:3000/api/users/${credentials.email}`
+        );
+    const {user} = await response.json()
+          console.log(user)
+          if (user) { 
+            const isMatch = bcrypt.compare(
+              credentials?.password,
+              user.hashedPassword
+            );
 
-//              if (isMatch) {
-//                return user;
-//              } else {
-//                throw new Error('Email or Password is not correct');
-//              }
-//           }
-//           else {
-//             console.error('User not found');
-//           }
+            if (isMatch) {
+               console.log(isMatch, user, 'success')
+               return user;
+             } else {
+               throw new Error('Email or Password is not correct');
+             }
+          }
+          else {
+            console.error('User not found');
+          }
 
-//       } catch (error) {
-//          console.error(error);
-//       }
-//       },
-//     }),
+      } catch (error) {
+         console.error(error);
+      }
+      },
+    }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
