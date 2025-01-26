@@ -1,19 +1,15 @@
 'use client';
 
 import TopSection from '@/components/shared/TopSection';
-import Link from 'next/link';
 import React, { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
-// import axios from 'axios';
-import { useRouter } from 'next/navigation';
-import toast from 'react-hot-toast';
 import bcrypt from 'bcryptjs';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { imageUpload } from '@/utils';
-
+import createUser from '@/queries/createUser';
+import { useRouter } from 'next/navigation';
 
 // Zod schema for validation
 const schema = z.object({
@@ -49,7 +45,7 @@ export default function Register() {
 
   // Form submission handler
   const handleRegister = async ({ name, email, password }) => {
-    try {
+
       const image_url = await imageUpload(imageFile);
       const hashedPassword = bcrypt.hashSync(password, 5);
 
@@ -67,25 +63,9 @@ export default function Register() {
         status: 'verified',
       };
 
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userInfo),
-      });
+   createUser(userInfo)
+     router.push('/');
 
-      if (response.status === 201) {
-       toast.success("Successfully registered")
-       router.push('/');
-     }
-
-
-    } catch (err) {
-      console.error('Error:', err);
-      toast.error(err.message);
-    } finally {
-    }
   };
 
   // Handle file input changes
@@ -94,48 +74,7 @@ export default function Register() {
     setImageFile(file);
   };
 
-  // const {mutateAsync : saveUser} = useMutation({
-  //     mutationFn : async(user) => {
-  //         const {data} = await axios.post('http://localhost:3000/api/registerdUsers', user)
-  //         return data
-  //     },
-
-  //     onSuccess : () => {
-  //         toast.success("User Registration Successful!")
-  //         router.push('/login')
-  //     },
-
-  //     onError: (error) => {
-  //         console.error(error);
-  //         toast.error("This user is already registered!");
-  //         router.push('/login')
-  //     }
-  // })
-
-  // const handleRegisterSubmit = async(event) => {
-  //     event.preventDefault();
-
-  //     const form = event.target;
-  //     const username = form?.username?.value;
-  //     const email = form?.email?.value;
-  //     const password = form?.password?.value;
-  //     const photoURL = form?.photoURL?.value;
-
-  //     console.log(username, email)
-
-  //     const hashPassword = bcrypt.hashSync(password, 14);
-
-  //     const registeredUser = {
-  //         username, email, hashPassword, photoURL
-  //     }
-
-  //     try{
-  //         await saveUser(registeredUser)
-  //     }catch(error){
-  //         console.log(error);
-  //     }
-  // }
-
+  
   return (
     <div className='min-h-screen flex items-center justify-center'>
       <div className='p-6  bg-gray-700 rounded-lg shadow-lg my-10'>
