@@ -64,7 +64,7 @@ export default function Register() {
       };
 
    createUser(userInfo)
-     router.push('/');
+    //  router.push('/');
 
   };
 
