@@ -8,6 +8,9 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
+import getSingleUser from '@/queries/getSingleUser';
+import { doCredentialLogin } from '../actions';
+import { bcrypt } from 'bcryptjs';
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,31 +23,55 @@ export default function SignIn() {
   } = useForm();
 
   const onSubmit = async ({ email, password }) => {
-    console.log(email, password);
+   
+    const user = await getSingleUser(email);
     
-
-    try {
-      const response = await signIn('credentials', {
-        email,
-        password,
-        redirect: false,
-      });
-
-      console.log(response);
-
-      if (response?.error) {
-        console.log('The error is : ', response.error);
-        toast.error(response.error);
+     if (!user) {
+       toast.error('User not found, please register.');
+       return;
+     }  
+     
+    if (user) {
+      const isMatch = await bcrypt.compare(password, user.hashedPassword);
+         console.log(isMatch); 
+      if(isMatch) {
+        return user
       }
-
-      if (response?.ok) {
-        toast.success('Login Successful!');
-        router.push('/');
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error(error?.message || 'Something went wrong!');
+    } else {
+      toast.error('User not found, please Register');
     }
+    ;
+
+    //   if (!!response.error) {
+    //     console.error(response.error);
+    //     setError(response.error.message);
+    //   } else {
+    //     toast.success('Login Successful')
+    //     router.push('/home');
+    //   }
+
+    // try {
+    //   const response = await signIn('credentials', {
+    //     email,
+    //     password,
+    //     redirect: false,
+    //   });
+
+    //   console.log(response);
+
+    //   if (response?.error) {
+    //     console.log('The error is : ', response.error);
+    //     toast.error(response.error);
+    //   }
+
+    //   if (response?.ok) {
+    //     toast.success('Login Successful!');
+    //     router.push('/');
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    //   toast.error(error?.message || 'Something went wrong!');
+    // }
   };
 
 
