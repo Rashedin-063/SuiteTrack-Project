@@ -18,11 +18,11 @@ export async function POST(req) {
   await dbConnect();
 
   try {
-      const user = await req.json();
+      const userInfo = await req.json();
 
-      const newUser = new User(user);
+      const user = new User(userInfo);
 
-      await newUser.save();
+      await user.save();
 
       return NextResponse.json({ message: 'user created successfully' }, {status: 201});
   } catch (error) {

@@ -10,6 +10,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { imageUpload } from '@/utils';
 import createUser from '@/queries/createUser';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+import getSingleUser from '@/queries/getSingleUser';
 
 // Zod schema for validation
 const schema = z.object({
@@ -45,27 +47,34 @@ export default function Register() {
 
   // Form submission handler
   const handleRegister = async ({ name, email, password }) => {
+    
+    const image_url = await imageUpload(imageFile);
+    const hashedPassword = bcrypt.hashSync(password, 5);
 
-      const image_url = await imageUpload(imageFile);
-      const hashedPassword = bcrypt.hashSync(password, 5);
+    // console.log(password, hashedPassword);
+    // return console.log(name, email, password, image_url);
 
+    // find if the user is already exists
 
-      // console.log(password, hashedPassword);
-      // return console.log(name, email, password, image_url);
+    const existingUser = await getSingleUser(email);
 
-      const userInfo = {
-        displayName: name,
-        email,
-        hashedPassword,
-        photoURL: image_url,
-        subscription: 'usual',
-        role: 'user',
-        status: 'verified',
-      };
+    // console.log(existingUser, email)
 
-   createUser(userInfo)
-    //  router.push('/');
+    if (email === existingUser?.email) {
+      toast.error('User already exist, please sign in');
+      router.push('/login')
+      return;
+    }
 
+    const userInfo = {
+      name,
+      email,
+      password: hashedPassword,
+      image: image_url,
+    };
+
+    createUser(userInfo);
+    router.push('/login');
   };
 
   // Handle file input changes

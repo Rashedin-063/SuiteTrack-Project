@@ -3,12 +3,6 @@ import toast from 'react-hot-toast';
 
 async function createUser(userInfo) {
 
-  // find if the user is already exists
-
-  const existingUser = await fetch(`/api/users/${userInfo?.email}`);
-
-  return console.log('existing user', existingUser);
-
   try {
     const response = await fetch('/api/users', {
       method: 'POST',
@@ -22,7 +16,7 @@ async function createUser(userInfo) {
       toast.success('Successfully registered');
     }
   } catch (err) {
-    console.error('Error:', err);
+    console.error('Error:', err.message);
     toast.error(err.message);
   }
 }

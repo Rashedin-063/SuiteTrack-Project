@@ -3,9 +3,9 @@ import { User } from "@/models/User";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
-  const email = request.nextUrl.pathname.split('/').pop(); // Gets the last part of the path
+  const email = request.nextUrl.pathname.split('/').pop();
 
-  console.log('Extracted email from pathname:', email);
+  // console.log('Extracted email from pathname:', email);
   
   
   try {
@@ -13,7 +13,7 @@ export async function GET(request) {
     await dbConnect();
 
     const user = await User.findOne({ email: email });
-    console.log('user info', user);
+    // console.log('user info', user);
     
     return NextResponse.json({ user }, { status: 200 });
   } catch (error) {
