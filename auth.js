@@ -30,7 +30,7 @@ export const {
               user.password
             );
             if (isMatch) {
-              // console.log('inside isMatch', isMatch, user)             
+              console.log('inside isMatch', isMatch, user)             
               return user;
             } else {
               throw new Error('Email or Password is not correct');

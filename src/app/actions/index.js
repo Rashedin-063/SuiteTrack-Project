@@ -16,7 +16,10 @@ export async function doCredentialLogin(formData) {
     const response = await signIn('credentials', {
       email: formData.email,
       password: formData.password,
+      redirect: false
     });
+    console.log('response is', response)
+    
     return response;
   } catch (err) {
     throw err;

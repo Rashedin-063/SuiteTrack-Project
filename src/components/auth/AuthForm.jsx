@@ -16,12 +16,12 @@ const AuthForm = async () => {
       {session ? (
         <div className='flex justify-center items-center gap-2'>
           <Image
-            src={session?.user?.image || userPlaceholder}
+            src={session?.user?.image ?? userPlaceholder}
             alt={session?.user?.name || 'user'}
             referrerPolicy='no-referrer'
-            width={40}
-            height={40}
-            className='rounded-full border-2 border-gray-700'
+            width={30}
+            height={30}
+            className='rounded-full w-10 h-10 object-cover'
           />
         <Logout/>
         </div>

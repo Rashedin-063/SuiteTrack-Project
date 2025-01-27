@@ -25,15 +25,15 @@ export default function SignIn() {
 
    try {
      const response = await doCredentialLogin(formData);
+     console.log('inside response', response);
+     router.push('/');
+     toast.success('Logged in successfully');
 
-     if (response.error) {
-       toast.error(response.error);
-     } else {
-      //  router.push('/'); // Navigate to home on success
+     if (!!response.error) {
+       console.error(response.error);
      }
-   } catch (error) {
-     console.error(error);
-     toast.error('Check your Credentials');
+   } catch (e) {
+     console.error(e.message);
    }
  };
   
