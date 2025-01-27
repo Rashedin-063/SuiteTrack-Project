@@ -3,7 +3,6 @@ import toast from 'react-hot-toast';
 
 async function createUser(userInfo) {
 
-
   try {
     const response = await fetch('/api/users', {
       method: 'POST',
@@ -17,7 +16,7 @@ async function createUser(userInfo) {
       toast.success('Successfully registered');
     }
   } catch (err) {
-    console.error('Error:', err);
+    console.error('Error:', err.message);
     toast.error(err.message);
   }
 }

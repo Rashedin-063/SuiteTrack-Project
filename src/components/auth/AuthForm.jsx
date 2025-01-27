@@ -5,7 +5,6 @@ import { auth } from '@/../auth';
 import Image from 'next/image';
 import SocialLogin from './SocialLogin';
 import Logout from './Logout';
-import LoginForm from './LoginForm';
 
 const AuthForm = async () => {
   const session = await auth();
@@ -15,8 +14,8 @@ const AuthForm = async () => {
       {session ? (
         <div className='flex justify-center items-center gap-2'>
           <Image
-            src={session?.user?.image}
-            alt={session?.user?.name}
+            src={session?.user?.image ?? session.user.photoURL}
+            alt={session?.user?.name ?? session.user.displayName}
             referrerPolicy='no-referrer'
             width={36}
             height={36}
@@ -26,7 +25,6 @@ const AuthForm = async () => {
         </div>
       ) : (
           <div>
-            <LoginForm/>
           <SocialLogin />
         </div>
       )}

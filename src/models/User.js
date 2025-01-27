@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
 const userSchema = new Schema({
-  displayName: {
+  name: {
     required: true,
     type: String,
   },
@@ -9,23 +9,11 @@ const userSchema = new Schema({
     required: true,
     type: String,
   },
-  hashedPassword: {
+  password: {
     required: true,
     type: String,
   },
-  photoURL: {
-    required: true,
-    type: String,
-  },
-  subscription: {
-    required: true,
-    type: String,
-  },
-  role: {
-    required: true,
-    type: String,
-  },
-  status: {
+  image: {
     required: true,
     type: String,
   },

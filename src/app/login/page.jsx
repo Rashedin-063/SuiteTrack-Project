@@ -29,7 +29,7 @@ export default function SignIn() {
       if (!!response.error) {
         toast.error(response.error);
       } else {
-        router.push('/home');
+        // router.push('/register');
       }
     } catch (error) {
        console.error(error);

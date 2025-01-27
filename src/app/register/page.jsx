@@ -47,6 +47,8 @@ export default function Register() {
 
   // Form submission handler
   const handleRegister = async ({ name, email, password }) => {
+    console.log(email)
+    
     const image_url = await imageUpload(imageFile);
     const hashedPassword = bcrypt.hashSync(password, 5);
 
@@ -57,7 +59,7 @@ export default function Register() {
 
     const existingUser = await getSingleUser(email);
 
-    // console.log(existingUser.email, userInfo.email)
+    console.log(existingUser, email)
 
     if (email === existingUser?.email) {
       toast.error('User already exist, please sign in');
@@ -66,17 +68,14 @@ export default function Register() {
     }
 
     const userInfo = {
-      displayName: name,
+      name,
       email,
-      hashedPassword,
-      photoURL: image_url,
-      subscription: 'usual',
-      role: 'user',
-      status: 'verified',
+      password: hashedPassword,
+      image: image_url,
     };
 
     createUser(userInfo);
-    router.push('/');
+    router.push('/login');
   };
 
   // Handle file input changes
