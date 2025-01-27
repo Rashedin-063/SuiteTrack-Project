@@ -4,7 +4,7 @@ async function getSingleUser(email) {
     const response = await fetch(`/api/users/${email}`);
     
     const {user} = await response.json()
-    console.log(user)
+
     return user;
   } catch (error) {
     console.error('Error getting user', error);

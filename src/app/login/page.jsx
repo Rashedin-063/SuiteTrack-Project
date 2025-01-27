@@ -4,11 +4,11 @@ import TopSection from '@/components/shared/TopSection';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
-import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 import { doCredentialLogin } from '../actions';
+import SocialLogin from '@/components/auth/SocialLogin';
 
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,37 +20,22 @@ export default function SignIn() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async ({ email, password }) => {
-    const formData = {email, password}
- 
-    try {
-      const response = await doCredentialLogin(formData);
+ const onSubmit = async ({ email, password }) => {
+   const formData = { email, password };
 
-      if (!!response.error) {
-        toast.error(response.error);
-      } else {
-        // router.push('/register');
-      }
-    } catch (error) {
-       console.error(error);
-       toast.error('Check your Credentials');
-    }
-     
-  };
+   try {
+     const response = await doCredentialLogin(formData);
 
-
-   const onSubmit2 = async ({ email, password }) => {
-      try {
-        setLoading(true);
-        await logInUser(email, password);
-        swalAlert('success', 'Sign Up Successful', 'top-right');
-        navigate(from);
-      } catch (err) {
-        //console.log(err);
-        toast.error(err.message);
-        setLoading(false);
-      }
-    };
+     if (response.error) {
+       toast.error(response.error);
+     } else {
+      //  router.push('/'); // Navigate to home on success
+     }
+   } catch (error) {
+     console.error(error);
+     toast.error('Check your Credentials');
+   }
+ };
   
 
   return (
@@ -63,9 +48,7 @@ export default function SignIn() {
           }
         />
         <hr className='mt-4' />
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-        >
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className='form-control'>
             <label className='label'>
               <span className='label-text -mb-1'>Email</span>
@@ -75,6 +58,7 @@ export default function SignIn() {
               {...register('email', { required: 'Email is required' })}
               placeholder='Email'
               className='input input-bordered'
+              autoComplete='off'
             />
             {errors.email && (
               <p className='text-red-500 mt-2'>{errors.email.message}</p>
@@ -91,22 +75,20 @@ export default function SignIn() {
               autoComplete='current-password'
               className='input input-bordered'
             />
-            <span
+            <button
               onClick={() => setShowPassword(!showPassword)}
               className='absolute top-12 right-8 cursor-pointer'
+              role='button'
+              tabIndex={0}
+              aria-label={showPassword ? 'Hide Password' : 'Show Password'}
             >
               {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
+            </button>
             {errors.password && (
               <p className='text-red-500 mt-2'>{errors.password.message}</p>
             )}
-            <label className='label'>
-              <a href='#' className='label-text-alt link link-hover text-base'>
-                Forgot password?
-              </a>
-            </label>
           </div>
-          <div className='form-control'>
+          <div className='form-control my-4'>
             <button
               type='submit'
               className='btn bg-green-700
@@ -116,8 +98,8 @@ export default function SignIn() {
               Sign In
             </button>
           </div>
-          {/* <SocialLogin /> */}
         </form>
+          <SocialLogin />
         <div className='text-center text-sm mt-6'>
           Don&apos;t have any account?{' '}
           <Link href={'/register'} className='font-semibold text-blue-500'>

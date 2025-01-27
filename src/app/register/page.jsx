@@ -47,7 +47,6 @@ export default function Register() {
 
   // Form submission handler
   const handleRegister = async ({ name, email, password }) => {
-    console.log(email)
     
     const image_url = await imageUpload(imageFile);
     const hashedPassword = bcrypt.hashSync(password, 5);
@@ -59,7 +58,7 @@ export default function Register() {
 
     const existingUser = await getSingleUser(email);
 
-    console.log(existingUser, email)
+    // console.log(existingUser, email)
 
     if (email === existingUser?.email) {
       toast.error('User already exist, please sign in');
